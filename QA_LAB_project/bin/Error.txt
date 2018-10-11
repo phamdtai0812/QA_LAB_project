@@ -1,0 +1,279 @@
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 164
+Date :1/16/2018 10:21:55 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 164
+Date :1/16/2018 10:23:57 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 164
+Date :1/16/2018 10:26:57 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 164
+Date :1/16/2018 10:39:27 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 164
+Date :2/5/2018 12:26:44 PM
+
+-----------------------------------------------------------------------------
+
+Message :ORA-00904: "FIELDNAME": invalid identifier<br/>
+StackTrace :   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 295
+Date :2/5/2018 12:26:56 PM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 164
+Date :2/5/2018 12:28:18 PM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 164
+Date :2/5/2018 12:39:42 PM
+
+-----------------------------------------------------------------------------
+
+Message :PI Point not found '\\gramercypi1\LABTTCS_TEST'.<br/>
+StackTrace :   at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at ConsoleAppOracle.Program.PiInsert(Dictionary`2 piTagValues, Dictionary`2 piTagNames) in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 499
+Date :2/5/2018 12:41:11 PM
+
+-----------------------------------------------------------------------------
+
+Message :PI Point not found '\\gramercypi1\LABTTAC_TEST'.<br/>
+StackTrace :   at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at ConsoleAppOracle.Program.PiInsert(Dictionary`2 piTagValues, Dictionary`2 piTagNames) in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 555
+Date :2/5/2018 5:00:40 PM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 166
+Date :2/6/2018 7:21:41 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 166
+Date :2/6/2018 7:29:43 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 107
+Date :2/8/2018 9:18:08 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/14/2018 12:03:10 PM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/15/2018 7:53:06 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/15/2018 7:55:43 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/15/2018 7:56:32 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/15/2018 7:58:46 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/15/2018 7:59:43 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/15/2018 8:03:58 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/15/2018 8:13:51 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/16/2018 1:09:27 PM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/16/2018 1:12:41 PM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 142
+Date :2/16/2018 1:13:31 PM
+
+-----------------------------------------------------------------------------
+
+Message :[-11046] Target Date in Future<br/>
+StackTrace :   at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIPoint.UpdateValueInternalBufferIfPossible(Events mdaEvents, AFUpdateOption option)
+   at OSIsoft.AF.PI.PIPoint.UpdateValue(AFValue value, AFUpdateOption option, AFBufferOption bufferOption)
+   at OSIsoft.AF.PI.PIPoint.UpdateValue(AFValue value, AFUpdateOption option)
+   at ConsoleAppOracle.Program.PiInsert(Dictionary`2 piTagValues, Dictionary`2 piTagNames) in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 627
+Date :2/21/2018 7:21:36 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 183
+Date :2/21/2018 7:36:49 AM
+
+-----------------------------------------------------------------------------
+
+Message :Invalid operation on a closed object<br/>
+StackTrace :   at Oracle.ManagedDataAccess.Client.OracleDataReader.IsDBNull(Int32 i)
+   at Oracle.ManagedDataAccess.Client.OracleDataReader.GetValue(Int32 i)
+   at Oracle.ManagedDataAccess.Client.OracleDataReader.get_Item(Int32 i)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 177
+Date :2/21/2018 7:37:53 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 183
+Date :2/21/2018 7:42:46 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 183
+Date :2/21/2018 7:43:08 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 183
+Date :2/21/2018 8:01:29 AM
+
+-----------------------------------------------------------------------------
+
+Message :An item with the same key has already been added.<br/>
+StackTrace :   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at ConsoleAppOracle.Program.queryData() in D:\PROJECTS\ConsoleAppOracle\ConsoleAppOracle\Program.cs:line 185
+Date :2/21/2018 8:23:54 AM
+
+-----------------------------------------------------------------------------
+

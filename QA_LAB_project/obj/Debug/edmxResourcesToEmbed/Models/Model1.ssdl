@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LabModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LAB_CAUSTIC_CLEAN">
+    <Key>
+      <PropertyRef Name="CCID" />
+    </Key>
+    <Property Name="CC_ID" Type="varchar" MaxLength="50" />
+    <Property Name="CCDATE" Type="date" />
+    <Property Name="CCTRUCK" Type="varchar" MaxLength="50" />
+    <Property Name="CCCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="CCAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CCROUND" Type="varchar" MaxLength="10" />
+    <Property Name="CCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_CHARGECONTROL">
+    <Key>
+      <PropertyRef Name="CC_ID" />
+    </Key>
+    <Property Name="CCROUND" Type="varchar" MaxLength="50" />
+    <Property Name="CCDATE" Type="date" />
+    <Property Name="PLANTCS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="TESTTANKCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="TESTTANKAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="FLASHTANK4CAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="FLASHTANK4AC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="SETTLERFEEDCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="SETTLERFEEDAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PRESSFEEDCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="PRESSFEEDAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="LTPCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="LTPAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="EVAPFEEDCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="EVAPFEEDAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="A7OVERFLOWCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="A7OVERFLOWAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="B7OVERFLOWCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="B7OVERFLOWAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="T1CAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="T1AC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="T3CAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="T3AC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="T7CAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="T7AC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="EVAPDISCH1CAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="EVAPDISCH1AC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="EVAPDISCH2CAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="EVAPDISCH2AC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="LTV1CAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="LTV1AC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="WOFCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="WOFAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="SUFCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="SUFAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="EVAPCCCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="EVAPCCAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PRESSCCCAUSTIC" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="PRESSCCAC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="LKD4SODA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="WUFSODA" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="MTLSODA" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="SRTSODA" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="CANYONSODA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PISOLITESODA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PFMG" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="TESTTANKCS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="SETTLERFEEDCS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="SETTLERFEEDAIM" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="LTPAIM" Type="decimal" Precision="6" Scale="0" />
+    <Property Name="CTRIDIGESTOR" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="ACTRIDIGESTOR" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CFT5" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="ACFT5" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CDIGDISCH" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="ACDIGDISCH" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CEVAPDISCH" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="ACEVAPDISCH" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CY15OVERFLOW" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="ACY15OVERFLOW" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CY16OVERFLOW" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="ACY16OVERFLOW" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="TRIDIGESTORAIM" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="FT5AIM" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CAG1" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="CAG3" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="CAG7" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="ACAG1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="ACAG3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="ACAG7" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CH_ID" Type="int" />
+    <Property Name="FT5CS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="TRIDIGESTORCS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="DIGDISCHCS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="BADCOND" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="PSCOLOR" Type="int" />
+    <Property Name="CC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_DAILYANALYSIS">
+    <Key>
+      <PropertyRef Name="DAILY_ID" />
+    </Key>
+    <Property Name="DADATE" Type="date" />
+    <Property Name="PRODUCT" Type="varchar" MaxLength="50" />
+    <Property Name="LOI" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="P100" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="P200" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="P325" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="BULKDENS" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="SI" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="FE" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="NA" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="ZN" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="MN" Type="decimal" Precision="13" Scale="5" />
+    <Property Name="CA" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="TI" Type="decimal" Precision="13" Scale="5" />
+    <Property Name="FREEMOIST" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="CSEDS" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="INSOLS" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="HUNTERL" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="HUNTERA" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="HUNTERB" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="AI" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="M20" Type="decimal" Precision="13" Scale="4" />
+    <Property Name="DAILY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_ENVIRONMENTAL">
+    <Key>
+      <PropertyRef Name="ENV_ID" />
+    </Key>
+    <Property Name="EADATE" Type="date" />
+    <Property Name="RWRPH" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="EDPH" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="WDPH" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="FEDPH" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="CDPH" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="OXPOND" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="EDFLOW" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="WDFLOW" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="FEDFLOW" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="CDFLOW" Type="decimal" Precision="6" Scale="1" />
+    <Property Name="SEWERPH1" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SEWERPH2" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SEWERPH3" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SEWERPH5" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="DAMPH1" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SAHOTWELL" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SAPLANTDRAIN" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SALIFTSTATION" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SASURGEBASIN" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="P2O5CATESTTANK" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="P2O5CASETTLERFEED" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="ABSCATESTTANK" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="ABSCALTP" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SCATESTTANK" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SCA4FT" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SCASETTLERFD" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SCALTP" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="FASETTLER" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="FAWASHER" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="FAMIDDLE" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="ENV_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_H2O_TANK_DATA">
+    <Key>
+      <PropertyRef Name="H2O_ID" />
+    </Key>
+    <Property Name="H2ODATE" Type="date" />
+    <Property Name="H2ONORTH0000" Type="int" />
+    <Property Name="H2ONORTH0600" Type="int" />
+    <Property Name="H2ONORTH1200" Type="int" />
+    <Property Name="H2ONORTH1800" Type="int" />
+    <Property Name="H2OSOUTH0000" Type="int" />
+    <Property Name="H2OSOUTH0600" Type="int" />
+    <Property Name="H2OSOUTH1200" Type="int" />
+    <Property Name="H2OSOUTH1800" Type="int" />
+    <Property Name="H2O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_HYDRATE_ANALYSIS">
+    <Key>
+      <PropertyRef Name="HYDRATE_ID" />
+    </Key>
+    <Property Name="HA_ID" Type="varchar" MaxLength="50" />
+    <Property Name="HA_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="SADATE" Type="date" />
+    <Property Name="CONTAINERID" Type="varchar" MaxLength="50" />
+    <Property Name="ADATE" Type="varchar" MaxLength="50" />
+    <Property Name="REFLECTANCE" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="LEACHSODA" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="MOISTURE" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="HYDRATE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_KILN_DRYER">
+    <Key>
+      <PropertyRef Name="KILN_ID" />
+    </Key>
+    <Property Name="KDDATE" Type="date" />
+    <Property Name="KFLS0600_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFLS0600_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFLS0600_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFLS1800_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFLS1800_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFLS1800_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFM0600_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFM0600_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFM0600_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDLOI2200_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDLOI2200_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDLOI2200_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDLOI1000_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDLOI1000_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDLOI1000_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDNA2200_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDNA2200_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDNA2200_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDNA1000_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDNA1000_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDNA1000_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDCA2200_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDCA2200_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDCA2200_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDCA1000_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDCA1000_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDCA1000_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDZN2200_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDZN2200_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDZN2200_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDZN1000_1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDZN1000_2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KDZN1000_3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HD0600LS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HD0600RF" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HD1100LS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HD1100RF" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HD1800LS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HD1800RF" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HD2200LS" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HD2200RF" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="HDFM0600" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMAPFNA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMAPFCA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMAPFZN" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMA6A6BNA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMA6A6BCA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMA6A6BZN" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMATTSNA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMATTSCA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMATTSZN" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMASTSNA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMASTSCA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="PSMASTSZN" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFM" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFM2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KFM3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CPNNA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CPNCA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CPNZN" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CPSNA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CPSCA" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="CPSZN" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="FT6" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="KILN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_MISC">
+    <Key>
+      <PropertyRef Name="MD_ID" />
+    </Key>
+    <Property Name="MMISCDATE" Type="date" />
+    <Property Name="MMISCDESCR" Type="varchar" MaxLength="255" />
+    <Property Name="MMISCQTY" Type="varchar" MaxLength="50" />
+    <Property Name="MMISCSIZE" Type="varchar" MaxLength="50" />
+    <Property Name="CCROUND" Type="varchar" MaxLength="50" />
+    <Property Name="MD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LAB_REPORT_NAMES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ReportName" Type="varchar" MaxLength="50" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_SEC_III_DATA">
+    <Key>
+      <PropertyRef Name="SECIII_ID" />
+    </Key>
+    <Property Name="SE_ID" Type="int" />
+    <Property Name="SECDATE" Type="date" />
+    <Property Name="SECRECORD" Type="varchar" MaxLength="50" />
+    <Property Name="SECID" Type="varchar" MaxLength="50" />
+    <Property Name="P100" Type="int" />
+    <Property Name="P200" Type="int" />
+    <Property Name="P325" Type="int" />
+    <Property Name="UM" Type="int" />
+    <Property Name="P325SA" Type="int" />
+    <Property Name="CAUS" Type="int" />
+    <Property Name="AC" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="SOL" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="GPLSOL" Type="int" />
+    <Property Name="HT" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="SA" Type="int" />
+    <Property Name="UM20" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="INDX" Type="varchar" MaxLength="50" />
+    <Property Name="SECIII_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_SEC1_DATA">
+    <Key>
+      <PropertyRef Name="SECI_ID" />
+    </Key>
+    <Property Name="SDDATE" Type="date" />
+    <Property Name="SASUF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SAWUF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SAMTL" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SAFA" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SALR" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="GPLS1" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="GPLS2" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="GPLS3" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="GPLS4" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="GPLSBF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="GPLSOXSET" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SABF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SAOXSET" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SALIMEREC" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SAST" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SALP" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="OAOXSET" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="OABF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="OA1CAKE" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="OA2CAKE" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="OASTSEED" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="OA6AB" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="OAPF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SRS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SRSTARCHI" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SRSTARCHS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SRPF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="TAAA4FT" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="TAAASF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="TAAASUF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="TAAAWUF" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="TAAAMTL" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="LTPCA" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="LTP" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SPENTLIQ" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Y1516" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="TRIDIGEST" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="FT5" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="DIGDISCH" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP0" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP1" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP2" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP3" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP4" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP5" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP6" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP7" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="WP8" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="TD" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CPDS1" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CPDS2" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CPDS3" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CPDS4" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CRETTANK" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="APDS1" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="APDS2" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="APDS3" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="APDS4" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="ARETTANK" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="SPDS1" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SPDS2" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SPDS3" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SPDS4" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SRETTANK" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="DRETTANK" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="D1PDS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="D2PDS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="D3PDS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="D4PDS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="SECI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lab_TagTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tag_Name" Type="varchar" MaxLength="30" />
+    <Property Name="Min" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="Max" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="Pi_Tags" Type="varchar" MaxLength="20" />
+    <Property Name="Pi_Tags_Test" Type="varchar" MaxLength="50" />
+    <Property Name="gv_control_name" Type="varchar" MaxLength="50" />
+    <Property Name="Indx" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_WETCAKE_BARGE">
+    <Key>
+      <PropertyRef Name="WC_ID" />
+    </Key>
+    <Property Name="CERTIFICATE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="BARGE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="LOADOUT_DATE" Type="varchar" MaxLength="50" />
+    <Property Name="SIO2" Type="varchar" MaxLength="50" />
+    <Property Name="FE2O3" Type="varchar" MaxLength="50" />
+    <Property Name="NA2O" Type="varchar" MaxLength="50" />
+    <Property Name="CAO" Type="varchar" MaxLength="50" />
+    <Property Name="C_SEDS" Type="varchar" MaxLength="50" />
+    <Property Name="A_INSOLS" Type="varchar" MaxLength="50" />
+    <Property Name="L_SODA" Type="varchar" MaxLength="50" />
+    <Property Name="P100" Type="varchar" MaxLength="50" />
+    <Property Name="P200" Type="varchar" MaxLength="50" />
+    <Property Name="P325" Type="varchar" MaxLength="50" />
+    <Property Name="REFLECTANCE" Type="varchar" MaxLength="50" />
+    <Property Name="SOLIDS" Type="varchar" MaxLength="50" />
+    <Property Name="HUNTER_L" Type="varchar" MaxLength="50" />
+    <Property Name="HUNTER_A" Type="varchar" MaxLength="50" />
+    <Property Name="HUNTER_B" Type="varchar" MaxLength="50" />
+    <Property Name="WC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="LabModelStoreContainer">
+    <EntitySet Name="LAB_CAUSTIC_CLEAN" EntityType="Self.LAB_CAUSTIC_CLEAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_CHARGECONTROL" EntityType="Self.LAB_CHARGECONTROL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_DAILYANALYSIS" EntityType="Self.LAB_DAILYANALYSIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_ENVIRONMENTAL" EntityType="Self.LAB_ENVIRONMENTAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_H2O_TANK_DATA" EntityType="Self.LAB_H2O_TANK_DATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_HYDRATE_ANALYSIS" EntityType="Self.LAB_HYDRATE_ANALYSIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_KILN_DRYER" EntityType="Self.LAB_KILN_DRYER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_MISC" EntityType="Self.LAB_MISC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_SEC_III_DATA" EntityType="Self.LAB_SEC_III_DATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_SEC1_DATA" EntityType="Self.LAB_SEC1_DATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lab_TagTable" EntityType="Self.Lab_TagTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_WETCAKE_BARGE" EntityType="Self.LAB_WETCAKE_BARGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_REPORT_NAMES" EntityType="Self.LAB_REPORT_NAMES" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LAB_REPORT_NAMES].[ReportName] AS [ReportName], 
+    [LAB_REPORT_NAMES].[ID] AS [ID]
+    FROM [dbo].[LAB_REPORT_NAMES] AS [LAB_REPORT_NAMES]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

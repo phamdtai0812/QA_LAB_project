@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5c6dbd9fd37c4ef1b68a7f6fc55c2d57" Name="Diagram1" ZoomLevel="22">
+        <EntityTypeShape EntityType="LabModel.LAB_CAUSTIC_CLEAN" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_CHARGECONTROL" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_ENVIRONMENTAL" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_H2O_TANK_DATA" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_KILN_DRYER" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_SEC_III_DATA" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_SEC1_DATA" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_MISC" Width="1.5" PointX="3.375" PointY="12.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_WETCAKE_BARGE" Width="1.5" PointX="5.375" PointY="12.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_REPORT_NAMES" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_DAILYANALYSIS" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="LabModel.Lab_TagTable" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_HYDRATE_ANALYSIS" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

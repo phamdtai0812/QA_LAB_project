@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LabModelStoreContainer" CdmEntityContainer="LabEntities">
+    <EntitySetMapping Name="LAB_CAUSTIC_CLEAN">
+      <EntityTypeMapping TypeName="LabModel.LAB_CAUSTIC_CLEAN">
+        <MappingFragment StoreEntitySet="LAB_CAUSTIC_CLEAN">
+          <ScalarProperty Name="CCROUND" ColumnName="CCROUND" />
+          <ScalarProperty Name="CCID" ColumnName="CCID" />
+          <ScalarProperty Name="CCAC" ColumnName="CCAC" />
+          <ScalarProperty Name="CCCAUSTIC" ColumnName="CCCAUSTIC" />
+          <ScalarProperty Name="CCTRUCK" ColumnName="CCTRUCK" />
+          <ScalarProperty Name="CCDATE" ColumnName="CCDATE" />
+          <ScalarProperty Name="CC_ID" ColumnName="CC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_CHARGECONTROL">
+      <EntityTypeMapping TypeName="LabModel.LAB_CHARGECONTROL">
+        <MappingFragment StoreEntitySet="LAB_CHARGECONTROL">
+          <ScalarProperty Name="PSCOLOR" ColumnName="PSCOLOR" />
+          <ScalarProperty Name="BADCOND" ColumnName="BADCOND" />
+          <ScalarProperty Name="CC_ID" ColumnName="CC_ID" />
+          <ScalarProperty Name="DIGDISCHCS" ColumnName="DIGDISCHCS" />
+          <ScalarProperty Name="TRIDIGESTORCS" ColumnName="TRIDIGESTORCS" />
+          <ScalarProperty Name="FT5CS" ColumnName="FT5CS" />
+          <ScalarProperty Name="CH_ID" ColumnName="CH_ID" />
+          <ScalarProperty Name="ACAG7" ColumnName="ACAG7" />
+          <ScalarProperty Name="ACAG3" ColumnName="ACAG3" />
+          <ScalarProperty Name="ACAG1" ColumnName="ACAG1" />
+          <ScalarProperty Name="CAG7" ColumnName="CAG7" />
+          <ScalarProperty Name="CAG3" ColumnName="CAG3" />
+          <ScalarProperty Name="CAG1" ColumnName="CAG1" />
+          <ScalarProperty Name="FT5AIM" ColumnName="FT5AIM" />
+          <ScalarProperty Name="TRIDIGESTORAIM" ColumnName="TRIDIGESTORAIM" />
+          <ScalarProperty Name="ACY16OVERFLOW" ColumnName="ACY16OVERFLOW" />
+          <ScalarProperty Name="CY16OVERFLOW" ColumnName="CY16OVERFLOW" />
+          <ScalarProperty Name="ACY15OVERFLOW" ColumnName="ACY15OVERFLOW" />
+          <ScalarProperty Name="CY15OVERFLOW" ColumnName="CY15OVERFLOW" />
+          <ScalarProperty Name="ACEVAPDISCH" ColumnName="ACEVAPDISCH" />
+          <ScalarProperty Name="CEVAPDISCH" ColumnName="CEVAPDISCH" />
+          <ScalarProperty Name="ACDIGDISCH" ColumnName="ACDIGDISCH" />
+          <ScalarProperty Name="CDIGDISCH" ColumnName="CDIGDISCH" />
+          <ScalarProperty Name="ACFT5" ColumnName="ACFT5" />
+          <ScalarProperty Name="CFT5" ColumnName="CFT5" />
+          <ScalarProperty Name="ACTRIDIGESTOR" ColumnName="ACTRIDIGESTOR" />
+          <ScalarProperty Name="CTRIDIGESTOR" ColumnName="CTRIDIGESTOR" />
+          <ScalarProperty Name="LTPAIM" ColumnName="LTPAIM" />
+          <ScalarProperty Name="SETTLERFEEDAIM" ColumnName="SETTLERFEEDAIM" />
+          <ScalarProperty Name="SETTLERFEEDCS" ColumnName="SETTLERFEEDCS" />
+          <ScalarProperty Name="TESTTANKCS" ColumnName="TESTTANKCS" />
+          <ScalarProperty Name="PFMG" ColumnName="PFMG" />
+          <ScalarProperty Name="PISOLITESODA" ColumnName="PISOLITESODA" />
+          <ScalarProperty Name="CANYONSODA" ColumnName="CANYONSODA" />
+          <ScalarProperty Name="SRTSODA" ColumnName="SRTSODA" />
+          <ScalarProperty Name="MTLSODA" ColumnName="MTLSODA" />
+          <ScalarProperty Name="WUFSODA" ColumnName="WUFSODA" />
+          <ScalarProperty Name="LKD4SODA" ColumnName="LKD4SODA" />
+          <ScalarProperty Name="PRESSCCAC" ColumnName="PRESSCCAC" />
+          <ScalarProperty Name="PRESSCCCAUSTIC" ColumnName="PRESSCCCAUSTIC" />
+          <ScalarProperty Name="EVAPCCAC" ColumnName="EVAPCCAC" />
+          <ScalarProperty Name="EVAPCCCAUSTIC" ColumnName="EVAPCCCAUSTIC" />
+          <ScalarProperty Name="SUFAC" ColumnName="SUFAC" />
+          <ScalarProperty Name="SUFCAUSTIC" ColumnName="SUFCAUSTIC" />
+          <ScalarProperty Name="WOFAC" ColumnName="WOFAC" />
+          <ScalarProperty Name="WOFCAUSTIC" ColumnName="WOFCAUSTIC" />
+          <ScalarProperty Name="LTV1AC" ColumnName="LTV1AC" />
+          <ScalarProperty Name="LTV1CAUSTIC" ColumnName="LTV1CAUSTIC" />
+          <ScalarProperty Name="EVAPDISCH2AC" ColumnName="EVAPDISCH2AC" />
+          <ScalarProperty Name="EVAPDISCH2CAUSTIC" ColumnName="EVAPDISCH2CAUSTIC" />
+          <ScalarProperty Name="EVAPDISCH1AC" ColumnName="EVAPDISCH1AC" />
+          <ScalarProperty Name="EVAPDISCH1CAUSTIC" ColumnName="EVAPDISCH1CAUSTIC" />
+          <ScalarProperty Name="T7AC" ColumnName="T7AC" />
+          <ScalarProperty Name="T7CAUSTIC" ColumnName="T7CAUSTIC" />
+          <ScalarProperty Name="T3AC" ColumnName="T3AC" />
+          <ScalarProperty Name="T3CAUSTIC" ColumnName="T3CAUSTIC" />
+          <ScalarProperty Name="T1AC" ColumnName="T1AC" />
+          <ScalarProperty Name="T1CAUSTIC" ColumnName="T1CAUSTIC" />
+          <ScalarProperty Name="B7OVERFLOWAC" ColumnName="B7OVERFLOWAC" />
+          <ScalarProperty Name="B7OVERFLOWCAUSTIC" ColumnName="B7OVERFLOWCAUSTIC" />
+          <ScalarProperty Name="A7OVERFLOWAC" ColumnName="A7OVERFLOWAC" />
+          <ScalarProperty Name="A7OVERFLOWCAUSTIC" ColumnName="A7OVERFLOWCAUSTIC" />
+          <ScalarProperty Name="EVAPFEEDAC" ColumnName="EVAPFEEDAC" />
+          <ScalarProperty Name="EVAPFEEDCAUSTIC" ColumnName="EVAPFEEDCAUSTIC" />
+          <ScalarProperty Name="LTPAC" ColumnName="LTPAC" />
+          <ScalarProperty Name="LTPCAUSTIC" ColumnName="LTPCAUSTIC" />
+          <ScalarProperty Name="PRESSFEEDAC" ColumnName="PRESSFEEDAC" />
+          <ScalarProperty Name="PRESSFEEDCAUSTIC" ColumnName="PRESSFEEDCAUSTIC" />
+          <ScalarProperty Name="SETTLERFEEDAC" ColumnName="SETTLERFEEDAC" />
+          <ScalarProperty Name="SETTLERFEEDCAUSTIC" ColumnName="SETTLERFEEDCAUSTIC" />
+          <ScalarProperty Name="FLASHTANK4AC" ColumnName="FLASHTANK4AC" />
+          <ScalarProperty Name="FLASHTANK4CAUSTIC" ColumnName="FLASHTANK4CAUSTIC" />
+          <ScalarProperty Name="TESTTANKAC" ColumnName="TESTTANKAC" />
+          <ScalarProperty Name="TESTTANKCAUSTIC" ColumnName="TESTTANKCAUSTIC" />
+          <ScalarProperty Name="PLANTCS" ColumnName="PLANTCS" />
+          <ScalarProperty Name="CCDATE" ColumnName="CCDATE" />
+          <ScalarProperty Name="CCROUND" ColumnName="CCROUND" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_ENVIRONMENTAL">
+      <EntityTypeMapping TypeName="LabModel.LAB_ENVIRONMENTAL">
+        <MappingFragment StoreEntitySet="LAB_ENVIRONMENTAL">
+          <ScalarProperty Name="ENV_ID" ColumnName="ENV_ID" />
+          <ScalarProperty Name="FAMIDDLE" ColumnName="FAMIDDLE" />
+          <ScalarProperty Name="FAWASHER" ColumnName="FAWASHER" />
+          <ScalarProperty Name="FASETTLER" ColumnName="FASETTLER" />
+          <ScalarProperty Name="SCALTP" ColumnName="SCALTP" />
+          <ScalarProperty Name="SCASETTLERFD" ColumnName="SCASETTLERFD" />
+          <ScalarProperty Name="SCA4FT" ColumnName="SCA4FT" />
+          <ScalarProperty Name="SCATESTTANK" ColumnName="SCATESTTANK" />
+          <ScalarProperty Name="ABSCALTP" ColumnName="ABSCALTP" />
+          <ScalarProperty Name="ABSCATESTTANK" ColumnName="ABSCATESTTANK" />
+          <ScalarProperty Name="P2O5CASETTLERFEED" ColumnName="P2O5CASETTLERFEED" />
+          <ScalarProperty Name="P2O5CATESTTANK" ColumnName="P2O5CATESTTANK" />
+          <ScalarProperty Name="SASURGEBASIN" ColumnName="SASURGEBASIN" />
+          <ScalarProperty Name="SALIFTSTATION" ColumnName="SALIFTSTATION" />
+          <ScalarProperty Name="SAPLANTDRAIN" ColumnName="SAPLANTDRAIN" />
+          <ScalarProperty Name="SAHOTWELL" ColumnName="SAHOTWELL" />
+          <ScalarProperty Name="DAMPH1" ColumnName="DAMPH1" />
+          <ScalarProperty Name="SEWERPH5" ColumnName="SEWERPH5" />
+          <ScalarProperty Name="SEWERPH3" ColumnName="SEWERPH3" />
+          <ScalarProperty Name="SEWERPH2" ColumnName="SEWERPH2" />
+          <ScalarProperty Name="SEWERPH1" ColumnName="SEWERPH1" />
+          <ScalarProperty Name="CDFLOW" ColumnName="CDFLOW" />
+          <ScalarProperty Name="FEDFLOW" ColumnName="FEDFLOW" />
+          <ScalarProperty Name="WDFLOW" ColumnName="WDFLOW" />
+          <ScalarProperty Name="EDFLOW" ColumnName="EDFLOW" />
+          <ScalarProperty Name="OXPOND" ColumnName="OXPOND" />
+          <ScalarProperty Name="CDPH" ColumnName="CDPH" />
+          <ScalarProperty Name="FEDPH" ColumnName="FEDPH" />
+          <ScalarProperty Name="WDPH" ColumnName="WDPH" />
+          <ScalarProperty Name="EDPH" ColumnName="EDPH" />
+          <ScalarProperty Name="RWRPH" ColumnName="RWRPH" />
+          <ScalarProperty Name="EADATE" ColumnName="EADATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_H2O_TANK_DATA">
+      <EntityTypeMapping TypeName="LabModel.LAB_H2O_TANK_DATA">
+        <MappingFragment StoreEntitySet="LAB_H2O_TANK_DATA">
+          <ScalarProperty Name="H2O_ID" ColumnName="H2O_ID" />
+          <ScalarProperty Name="H2OSOUTH1800" ColumnName="H2OSOUTH1800" />
+          <ScalarProperty Name="H2OSOUTH1200" ColumnName="H2OSOUTH1200" />
+          <ScalarProperty Name="H2OSOUTH0600" ColumnName="H2OSOUTH0600" />
+          <ScalarProperty Name="H2OSOUTH0000" ColumnName="H2OSOUTH0000" />
+          <ScalarProperty Name="H2ONORTH1800" ColumnName="H2ONORTH1800" />
+          <ScalarProperty Name="H2ONORTH1200" ColumnName="H2ONORTH1200" />
+          <ScalarProperty Name="H2ONORTH0600" ColumnName="H2ONORTH0600" />
+          <ScalarProperty Name="H2ONORTH0000" ColumnName="H2ONORTH0000" />
+          <ScalarProperty Name="H2ODATE" ColumnName="H2ODATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_KILN_DRYER">
+      <EntityTypeMapping TypeName="LabModel.LAB_KILN_DRYER">
+        <MappingFragment StoreEntitySet="LAB_KILN_DRYER">
+          <ScalarProperty Name="KILN_ID" ColumnName="KILN_ID" />
+          <ScalarProperty Name="FT6" ColumnName="FT6" />
+          <ScalarProperty Name="CPSZN" ColumnName="CPSZN" />
+          <ScalarProperty Name="CPSCA" ColumnName="CPSCA" />
+          <ScalarProperty Name="CPSNA" ColumnName="CPSNA" />
+          <ScalarProperty Name="CPNZN" ColumnName="CPNZN" />
+          <ScalarProperty Name="CPNCA" ColumnName="CPNCA" />
+          <ScalarProperty Name="CPNNA" ColumnName="CPNNA" />
+          <ScalarProperty Name="KFM3" ColumnName="KFM3" />
+          <ScalarProperty Name="KFM2" ColumnName="KFM2" />
+          <ScalarProperty Name="KFM" ColumnName="KFM" />
+          <ScalarProperty Name="PSMASTSZN" ColumnName="PSMASTSZN" />
+          <ScalarProperty Name="PSMASTSCA" ColumnName="PSMASTSCA" />
+          <ScalarProperty Name="PSMASTSNA" ColumnName="PSMASTSNA" />
+          <ScalarProperty Name="PSMATTSZN" ColumnName="PSMATTSZN" />
+          <ScalarProperty Name="PSMATTSCA" ColumnName="PSMATTSCA" />
+          <ScalarProperty Name="PSMATTSNA" ColumnName="PSMATTSNA" />
+          <ScalarProperty Name="PSMA6A6BZN" ColumnName="PSMA6A6BZN" />
+          <ScalarProperty Name="PSMA6A6BCA" ColumnName="PSMA6A6BCA" />
+          <ScalarProperty Name="PSMA6A6BNA" ColumnName="PSMA6A6BNA" />
+          <ScalarProperty Name="PSMAPFZN" ColumnName="PSMAPFZN" />
+          <ScalarProperty Name="PSMAPFCA" ColumnName="PSMAPFCA" />
+          <ScalarProperty Name="PSMAPFNA" ColumnName="PSMAPFNA" />
+          <ScalarProperty Name="HDFM0600" ColumnName="HDFM0600" />
+          <ScalarProperty Name="HD2200RF" ColumnName="HD2200RF" />
+          <ScalarProperty Name="HD2200LS" ColumnName="HD2200LS" />
+          <ScalarProperty Name="HD1800RF" ColumnName="HD1800RF" />
+          <ScalarProperty Name="HD1800LS" ColumnName="HD1800LS" />
+          <ScalarProperty Name="HD1100RF" ColumnName="HD1100RF" />
+          <ScalarProperty Name="HD1100LS" ColumnName="HD1100LS" />
+          <ScalarProperty Name="HD0600RF" ColumnName="HD0600RF" />
+          <ScalarProperty Name="HD0600LS" ColumnName="HD0600LS" />
+          <ScalarProperty Name="KDZN1000_3" ColumnName="KDZN1000_3" />
+          <ScalarProperty Name="KDZN1000_2" ColumnName="KDZN1000_2" />
+          <ScalarProperty Name="KDZN1000_1" ColumnName="KDZN1000_1" />
+          <ScalarProperty Name="KDZN2200_3" ColumnName="KDZN2200_3" />
+          <ScalarProperty Name="KDZN2200_2" ColumnName="KDZN2200_2" />
+          <ScalarProperty Name="KDZN2200_1" ColumnName="KDZN2200_1" />
+          <ScalarProperty Name="KDCA1000_3" ColumnName="KDCA1000_3" />
+          <ScalarProperty Name="KDCA1000_2" ColumnName="KDCA1000_2" />
+          <ScalarProperty Name="KDCA1000_1" ColumnName="KDCA1000_1" />
+          <ScalarProperty Name="KDCA2200_3" ColumnName="KDCA2200_3" />
+          <ScalarProperty Name="KDCA2200_2" ColumnName="KDCA2200_2" />
+          <ScalarProperty Name="KDCA2200_1" ColumnName="KDCA2200_1" />
+          <ScalarProperty Name="KDNA1000_3" ColumnName="KDNA1000_3" />
+          <ScalarProperty Name="KDNA1000_2" ColumnName="KDNA1000_2" />
+          <ScalarProperty Name="KDNA1000_1" ColumnName="KDNA1000_1" />
+          <ScalarProperty Name="KDNA2200_3" ColumnName="KDNA2200_3" />
+          <ScalarProperty Name="KDNA2200_2" ColumnName="KDNA2200_2" />
+          <ScalarProperty Name="KDNA2200_1" ColumnName="KDNA2200_1" />
+          <ScalarProperty Name="KDLOI1000_3" ColumnName="KDLOI1000_3" />
+          <ScalarProperty Name="KDLOI1000_2" ColumnName="KDLOI1000_2" />
+          <ScalarProperty Name="KDLOI1000_1" ColumnName="KDLOI1000_1" />
+          <ScalarProperty Name="KDLOI2200_3" ColumnName="KDLOI2200_3" />
+          <ScalarProperty Name="KDLOI2200_2" ColumnName="KDLOI2200_2" />
+          <ScalarProperty Name="KDLOI2200_1" ColumnName="KDLOI2200_1" />
+          <ScalarProperty Name="KFM0600_3" ColumnName="KFM0600_3" />
+          <ScalarProperty Name="KFM0600_2" ColumnName="KFM0600_2" />
+          <ScalarProperty Name="KFM0600_1" ColumnName="KFM0600_1" />
+          <ScalarProperty Name="KFLS1800_3" ColumnName="KFLS1800_3" />
+          <ScalarProperty Name="KFLS1800_2" ColumnName="KFLS1800_2" />
+          <ScalarProperty Name="KFLS1800_1" ColumnName="KFLS1800_1" />
+          <ScalarProperty Name="KFLS0600_3" ColumnName="KFLS0600_3" />
+          <ScalarProperty Name="KFLS0600_2" ColumnName="KFLS0600_2" />
+          <ScalarProperty Name="KFLS0600_1" ColumnName="KFLS0600_1" />
+          <ScalarProperty Name="KDDATE" ColumnName="KDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_SEC_III_DATA">
+      <EntityTypeMapping TypeName="LabModel.LAB_SEC_III_DATA">
+        <MappingFragment StoreEntitySet="LAB_SEC_III_DATA">
+          <ScalarProperty Name="SECIII_ID" ColumnName="SECIII_ID" />
+          <ScalarProperty Name="INDX" ColumnName="INDX" />
+          <ScalarProperty Name="UM20" ColumnName="UM20" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="HT" ColumnName="HT" />
+          <ScalarProperty Name="GPLSOL" ColumnName="GPLSOL" />
+          <ScalarProperty Name="SOL" ColumnName="SOL" />
+          <ScalarProperty Name="AC" ColumnName="AC" />
+          <ScalarProperty Name="CAUS" ColumnName="CAUS" />
+          <ScalarProperty Name="P325SA" ColumnName="P325SA" />
+          <ScalarProperty Name="UM" ColumnName="UM" />
+          <ScalarProperty Name="P325" ColumnName="P325" />
+          <ScalarProperty Name="P200" ColumnName="P200" />
+          <ScalarProperty Name="P100" ColumnName="P100" />
+          <ScalarProperty Name="SECID" ColumnName="SECID" />
+          <ScalarProperty Name="SECRECORD" ColumnName="SECRECORD" />
+          <ScalarProperty Name="SECDATE" ColumnName="SECDATE" />
+          <ScalarProperty Name="SE_ID" ColumnName="SE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_SEC1_DATA">
+      <EntityTypeMapping TypeName="LabModel.LAB_SEC1_DATA">
+        <MappingFragment StoreEntitySet="LAB_SEC1_DATA">
+          <ScalarProperty Name="SECI_ID" ColumnName="SECI_ID" />
+          <ScalarProperty Name="D4PDS" ColumnName="D4PDS" />
+          <ScalarProperty Name="D3PDS" ColumnName="D3PDS" />
+          <ScalarProperty Name="D2PDS" ColumnName="D2PDS" />
+          <ScalarProperty Name="D1PDS" ColumnName="D1PDS" />
+          <ScalarProperty Name="DRETTANK" ColumnName="DRETTANK" />
+          <ScalarProperty Name="SRETTANK" ColumnName="SRETTANK" />
+          <ScalarProperty Name="SPDS4" ColumnName="SPDS4" />
+          <ScalarProperty Name="SPDS3" ColumnName="SPDS3" />
+          <ScalarProperty Name="SPDS2" ColumnName="SPDS2" />
+          <ScalarProperty Name="SPDS1" ColumnName="SPDS1" />
+          <ScalarProperty Name="ARETTANK" ColumnName="ARETTANK" />
+          <ScalarProperty Name="APDS4" ColumnName="APDS4" />
+          <ScalarProperty Name="APDS3" ColumnName="APDS3" />
+          <ScalarProperty Name="APDS2" ColumnName="APDS2" />
+          <ScalarProperty Name="APDS1" ColumnName="APDS1" />
+          <ScalarProperty Name="CRETTANK" ColumnName="CRETTANK" />
+          <ScalarProperty Name="CPDS4" ColumnName="CPDS4" />
+          <ScalarProperty Name="CPDS3" ColumnName="CPDS3" />
+          <ScalarProperty Name="CPDS2" ColumnName="CPDS2" />
+          <ScalarProperty Name="CPDS1" ColumnName="CPDS1" />
+          <ScalarProperty Name="TD" ColumnName="TD" />
+          <ScalarProperty Name="WP8" ColumnName="WP8" />
+          <ScalarProperty Name="WP7" ColumnName="WP7" />
+          <ScalarProperty Name="WP6" ColumnName="WP6" />
+          <ScalarProperty Name="WP5" ColumnName="WP5" />
+          <ScalarProperty Name="WP4" ColumnName="WP4" />
+          <ScalarProperty Name="WP3" ColumnName="WP3" />
+          <ScalarProperty Name="WP2" ColumnName="WP2" />
+          <ScalarProperty Name="WP1" ColumnName="WP1" />
+          <ScalarProperty Name="WP0" ColumnName="WP0" />
+          <ScalarProperty Name="DIGDISCH" ColumnName="DIGDISCH" />
+          <ScalarProperty Name="FT5" ColumnName="FT5" />
+          <ScalarProperty Name="TRIDIGEST" ColumnName="TRIDIGEST" />
+          <ScalarProperty Name="Y1516" ColumnName="Y1516" />
+          <ScalarProperty Name="SPENTLIQ" ColumnName="SPENTLIQ" />
+          <ScalarProperty Name="LTP" ColumnName="LTP" />
+          <ScalarProperty Name="LTPCA" ColumnName="LTPCA" />
+          <ScalarProperty Name="TAAAMTL" ColumnName="TAAAMTL" />
+          <ScalarProperty Name="TAAAWUF" ColumnName="TAAAWUF" />
+          <ScalarProperty Name="TAAASUF" ColumnName="TAAASUF" />
+          <ScalarProperty Name="TAAASF" ColumnName="TAAASF" />
+          <ScalarProperty Name="TAAA4FT" ColumnName="TAAA4FT" />
+          <ScalarProperty Name="SRPF" ColumnName="SRPF" />
+          <ScalarProperty Name="SRSTARCHS" ColumnName="SRSTARCHS" />
+          <ScalarProperty Name="SRSTARCHI" ColumnName="SRSTARCHI" />
+          <ScalarProperty Name="SRS" ColumnName="SRS" />
+          <ScalarProperty Name="OAPF" ColumnName="OAPF" />
+          <ScalarProperty Name="OA6AB" ColumnName="OA6AB" />
+          <ScalarProperty Name="OASTSEED" ColumnName="OASTSEED" />
+          <ScalarProperty Name="OA2CAKE" ColumnName="OA2CAKE" />
+          <ScalarProperty Name="OA1CAKE" ColumnName="OA1CAKE" />
+          <ScalarProperty Name="OABF" ColumnName="OABF" />
+          <ScalarProperty Name="OAOXSET" ColumnName="OAOXSET" />
+          <ScalarProperty Name="SALP" ColumnName="SALP" />
+          <ScalarProperty Name="SAST" ColumnName="SAST" />
+          <ScalarProperty Name="SALIMEREC" ColumnName="SALIMEREC" />
+          <ScalarProperty Name="SAOXSET" ColumnName="SAOXSET" />
+          <ScalarProperty Name="SABF" ColumnName="SABF" />
+          <ScalarProperty Name="GPLSOXSET" ColumnName="GPLSOXSET" />
+          <ScalarProperty Name="GPLSBF" ColumnName="GPLSBF" />
+          <ScalarProperty Name="GPLS4" ColumnName="GPLS4" />
+          <ScalarProperty Name="GPLS3" ColumnName="GPLS3" />
+          <ScalarProperty Name="GPLS2" ColumnName="GPLS2" />
+          <ScalarProperty Name="GPLS1" ColumnName="GPLS1" />
+          <ScalarProperty Name="SALR" ColumnName="SALR" />
+          <ScalarProperty Name="SAFA" ColumnName="SAFA" />
+          <ScalarProperty Name="SAMTL" ColumnName="SAMTL" />
+          <ScalarProperty Name="SAWUF" ColumnName="SAWUF" />
+          <ScalarProperty Name="SASUF" ColumnName="SASUF" />
+          <ScalarProperty Name="SDDATE" ColumnName="SDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_MISC">
+      <EntityTypeMapping TypeName="LabModel.LAB_MISC">
+        <MappingFragment StoreEntitySet="LAB_MISC">
+          <ScalarProperty Name="CCROUND" ColumnName="CCROUND" />
+          <ScalarProperty Name="MD_ID" ColumnName="MD_ID" />
+          <ScalarProperty Name="MMISCSIZE" ColumnName="MMISCSIZE" />
+          <ScalarProperty Name="MMISCQTY" ColumnName="MMISCQTY" />
+          <ScalarProperty Name="MMISCDESCR" ColumnName="MMISCDESCR" />
+          <ScalarProperty Name="MMISCDATE" ColumnName="MMISCDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_WETCAKE_BARGE">
+      <EntityTypeMapping TypeName="LabModel.LAB_WETCAKE_BARGE">
+        <MappingFragment StoreEntitySet="LAB_WETCAKE_BARGE">
+          <ScalarProperty Name="WC_ID" ColumnName="WC_ID" />
+          <ScalarProperty Name="HUNTER_B" ColumnName="HUNTER_B" />
+          <ScalarProperty Name="HUNTER_A" ColumnName="HUNTER_A" />
+          <ScalarProperty Name="HUNTER_L" ColumnName="HUNTER_L" />
+          <ScalarProperty Name="SOLIDS" ColumnName="SOLIDS" />
+          <ScalarProperty Name="REFLECTANCE" ColumnName="REFLECTANCE" />
+          <ScalarProperty Name="P325" ColumnName="P325" />
+          <ScalarProperty Name="P200" ColumnName="P200" />
+          <ScalarProperty Name="P100" ColumnName="P100" />
+          <ScalarProperty Name="L_SODA" ColumnName="L_SODA" />
+          <ScalarProperty Name="A_INSOLS" ColumnName="A_INSOLS" />
+          <ScalarProperty Name="C_SEDS" ColumnName="C_SEDS" />
+          <ScalarProperty Name="CAO" ColumnName="CAO" />
+          <ScalarProperty Name="NA2O" ColumnName="NA2O" />
+          <ScalarProperty Name="FE2O3" ColumnName="FE2O3" />
+          <ScalarProperty Name="SIO2" ColumnName="SIO2" />
+          <ScalarProperty Name="LOADOUT_DATE" ColumnName="LOADOUT_DATE" />
+          <ScalarProperty Name="BARGE_ID" ColumnName="BARGE_ID" />
+          <ScalarProperty Name="CERTIFICATE_ID" ColumnName="CERTIFICATE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_REPORT_NAMES">
+      <EntityTypeMapping TypeName="LabModel.LAB_REPORT_NAMES">
+        <MappingFragment StoreEntitySet="LAB_REPORT_NAMES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_DAILYANALYSIS">
+      <EntityTypeMapping TypeName="LabModel.LAB_DAILYANALYSIS">
+        <MappingFragment StoreEntitySet="LAB_DAILYANALYSIS">
+          <ScalarProperty Name="DAILY_ID" ColumnName="DAILY_ID" />
+          <ScalarProperty Name="M20" ColumnName="M20" />
+          <ScalarProperty Name="AI" ColumnName="AI" />
+          <ScalarProperty Name="HUNTERB" ColumnName="HUNTERB" />
+          <ScalarProperty Name="HUNTERA" ColumnName="HUNTERA" />
+          <ScalarProperty Name="HUNTERL" ColumnName="HUNTERL" />
+          <ScalarProperty Name="INSOLS" ColumnName="INSOLS" />
+          <ScalarProperty Name="CSEDS" ColumnName="CSEDS" />
+          <ScalarProperty Name="FREEMOIST" ColumnName="FREEMOIST" />
+          <ScalarProperty Name="TI" ColumnName="TI" />
+          <ScalarProperty Name="CA" ColumnName="CA" />
+          <ScalarProperty Name="MN" ColumnName="MN" />
+          <ScalarProperty Name="ZN" ColumnName="ZN" />
+          <ScalarProperty Name="NA" ColumnName="NA" />
+          <ScalarProperty Name="FE" ColumnName="FE" />
+          <ScalarProperty Name="SI" ColumnName="SI" />
+          <ScalarProperty Name="BULKDENS" ColumnName="BULKDENS" />
+          <ScalarProperty Name="P325" ColumnName="P325" />
+          <ScalarProperty Name="P200" ColumnName="P200" />
+          <ScalarProperty Name="P100" ColumnName="P100" />
+          <ScalarProperty Name="LOI" ColumnName="LOI" />
+          <ScalarProperty Name="PRODUCT" ColumnName="PRODUCT" />
+          <ScalarProperty Name="DADATE" ColumnName="DADATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lab_TagTable">
+      <EntityTypeMapping TypeName="LabModel.Lab_TagTable">
+        <MappingFragment StoreEntitySet="Lab_TagTable">
+          <ScalarProperty Name="Indx" ColumnName="Indx" />
+          <ScalarProperty Name="gv_control_name" ColumnName="gv_control_name" />
+          <ScalarProperty Name="Pi_Tags_Test" ColumnName="Pi_Tags_Test" />
+          <ScalarProperty Name="Pi_Tags" ColumnName="Pi_Tags" />
+          <ScalarProperty Name="Max" ColumnName="Max" />
+          <ScalarProperty Name="Min" ColumnName="Min" />
+          <ScalarProperty Name="Tag_Name" ColumnName="Tag_Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_HYDRATE_ANALYSIS">
+      <EntityTypeMapping TypeName="LabModel.LAB_HYDRATE_ANALYSIS">
+        <MappingFragment StoreEntitySet="LAB_HYDRATE_ANALYSIS">
+          <ScalarProperty Name="HYDRATE_ID" ColumnName="HYDRATE_ID" />
+          <ScalarProperty Name="MOISTURE" ColumnName="MOISTURE" />
+          <ScalarProperty Name="LEACHSODA" ColumnName="LEACHSODA" />
+          <ScalarProperty Name="REFLECTANCE" ColumnName="REFLECTANCE" />
+          <ScalarProperty Name="ADATE" ColumnName="ADATE" />
+          <ScalarProperty Name="CONTAINERID" ColumnName="CONTAINERID" />
+          <ScalarProperty Name="SADATE" ColumnName="SADATE" />
+          <ScalarProperty Name="HA_TYPE" ColumnName="HA_TYPE" />
+          <ScalarProperty Name="HA_ID" ColumnName="HA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
