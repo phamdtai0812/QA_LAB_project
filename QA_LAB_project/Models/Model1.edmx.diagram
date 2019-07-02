@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5c6dbd9fd37c4ef1b68a7f6fc55c2d57" Name="Diagram1" ZoomLevel="22">
+      <Diagram DiagramId="5c6dbd9fd37c4ef1b68a7f6fc55c2d57" Name="Diagram1" ZoomLevel="100">
         <EntityTypeShape EntityType="LabModel.LAB_CAUSTIC_CLEAN" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="LabModel.LAB_CHARGECONTROL" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="LabModel.LAB_ENVIRONMENTAL" Width="1.5" PointX="4.75" PointY="4.75" />
@@ -18,6 +18,9 @@
         <EntityTypeShape EntityType="LabModel.LAB_DAILYANALYSIS" Width="1.5" PointX="13.375" PointY="3.75" />
         <EntityTypeShape EntityType="LabModel.Lab_TagTable" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="LabModel.LAB_HYDRATE_ANALYSIS" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_HOUSEKEEPING" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_TECHNICIAN" Width="1.5" PointX="13.375" PointY="10.75" />
+        <EntityTypeShape EntityType="LabModel.LAB_DAILY_OP_Sample_Inventory" Width="1.5" PointX="13.375" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

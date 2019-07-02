@@ -38,5 +38,8 @@ namespace QA_LAB_project.Models
         public virtual DbSet<LAB_DAILYANALYSIS> LAB_DAILYANALYSIS { get; set; }
         public virtual DbSet<Lab_TagTable> Lab_TagTable { get; set; }
         public virtual DbSet<LAB_HYDRATE_ANALYSIS> LAB_HYDRATE_ANALYSIS { get; set; }
+        public virtual DbSet<LAB_HOUSEKEEPING> LAB_HOUSEKEEPING { get; set; }
+        public virtual DbSet<LAB_TECHNICIAN> LAB_TECHNICIAN { get; set; }
+        public virtual DbSet<LAB_DAILY_OP_Sample_Inventory> LAB_DAILY_OP_Sample_Inventory { get; set; }
     }
 }

@@ -34,7 +34,7 @@ background: #DCDCDC; /* will apply color */
 }
     </style>
     <br />
-    <br />
+   
     <asp:LinkButton ID="lnkDummy" runat="server"></asp:LinkButton>
    <div class="panel panel-default" style="width: 800px; margin:auto">
         <div class="panel-heading">
@@ -319,6 +319,39 @@ background: #DCDCDC; /* will apply color */
                                                        </ItemTemplate>
 
                                                    </asp:TemplateField>
+
+                                               </Columns>
+                                           </asp:GridView>
+                                </div>
+                            </div>
+                       <div class="row clearfix">
+                                <div class="table-responsive" style="float: left; margin-left: 5px; padding-right: 10px;">
+                                  Dryer #5
+                                           <asp:GridView ID="gv_dryer5" runat="server" Height="16px" Width="180px"
+                                               CssClass="table  table-bordered table-hover"
+                                               OnRowEditing="OnRowEditing"
+                                               AutoGenerateColumns="False"
+                                               
+                                               EditRowStyle-Width="20px">
+                                               <EditRowStyle CssClass="GridViewEditRow" />
+
+                                               <Columns>
+
+
+                                                   <asp:TemplateField HeaderText="Time" ItemStyle-Width="50">
+                                                       <ItemTemplate>
+                                                           <asp:Label ID="lbldryer5" runat="server" Text='<%# Eval("Time") %>'></asp:Label>
+                                                       </ItemTemplate>
+
+                                                   </asp:TemplateField>
+
+                                                   <asp:TemplateField HeaderText="L-Soda" ItemStyle-Width="50">
+                                                       <ItemTemplate>
+                                                           <asp:TextBox ID="txtbox_dryer5ls" runat="server" Text='<%# Eval("L-Soda") %>' Width="50px"></asp:TextBox>
+                                                       </ItemTemplate>
+
+                                                   </asp:TemplateField>
+                                               
 
                                                </Columns>
                                            </asp:GridView>

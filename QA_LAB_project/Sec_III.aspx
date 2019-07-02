@@ -48,7 +48,7 @@ background: #DCDCDC; /* will apply color */
 <%--    <div class="container-fluid main-container" style="margin-top: 2px">
         <div class="col-md-12 content col-xs-offset-2">--%>
     <br />
-    <br />
+
  <div class="panel panel-default" style="width: 800px; margin:auto">
         <div class="panel-heading">
             <p style="color:white">SEC III Worksheet</p>
@@ -76,10 +76,10 @@ background: #DCDCDC; /* will apply color */
                <div class="panel panel-default" style="width: 98%; padding: 10px; margin: 10px" id="panel1">
                     <div id="Tabs" role="tabpanel">
                         <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#pts" aria-controls="pts" role="tab" data-toggle="tab">Precip. Top Samples</a></li>
-                            <li><a href="#cps" aria-controls="cps" role="tab" data-toggle="tab">Cont. Precip. - South</a></li>
-                            <li><a href="#cpn" aria-controls="cpn" role="tab" data-toggle="tab">Cont. Precip. - North</a></li>
+                        <ul class="nav nav-tabs" role="tablist"  style="background-color: gray">
+                            <li class="active"><a href="#pts" aria-controls="pts" role="tab" data-toggle="tab">Precip. TS</a></li>
+                            <li><a href="#cps" aria-controls="cps" role="tab" data-toggle="tab">Cont. Prec. South</a></li>
+                            <li><a href="#cpn" aria-controls="cpn" role="tab" data-toggle="tab">Cont. Prec. North</a></li>
                             <li><a href="#cc" aria-controls="cc" role="tab" data-toggle="tab">Caustic Cleaning</a></li>
                         </ul>
                         <!-- Tab panes -->

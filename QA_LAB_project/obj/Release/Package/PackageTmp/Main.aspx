@@ -112,7 +112,7 @@
                   <div class="btn-group">
                       <div class="col-md-12" style="padding: 5px">
                        <%--  <asp:Button ID="Button11" runat="server" OnClientClick="" Style="margin-left: 0px; background-image: url('~/Image/4169E1.png'); white-space: normal" Text="" class="btn btn-info" Width="120px" />--%>
-                        <asp:Button ID="Button11" runat="server" OnClientClick="javascript:return(ReDirect('LTQA.aspx'));" Style="margin-left: 0px; background-image: url('~/Image/4169E1.png'); white-space: normal" Text="Lab Ticket & Quality Alert" class="btn btn-info" Width="120px" />
+                        <asp:Button ID="Button11" runat="server" OnClientClick="javascript:return(ReDirect('LTQA.aspx'));" Style="font-size:12px;  margin-left: 0px; background-image: url('~/Image/4169E1.png'); white-space: normal" Text="  Lab Ticket        Quality Alert              Housekeeping" class="btn btn-info" Width="120px" />
                       </div>
                   </div>
               </div>

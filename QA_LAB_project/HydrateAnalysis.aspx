@@ -42,7 +42,7 @@ background: #DCDCDC; /* will apply color */
 <%--    <div class="container-fluid main-container" style="margin-top: 2px">
         <div class="col-md-12 content col-xs-offset-2">--%>
     <br />
-    <br />
+   
     <div class="panel panel-default" style="width: 800px; margin-left: 150px">
         <div class="panel-heading">
             <p style="color:white">Hydrate Analysis</p>
@@ -69,9 +69,9 @@ background: #DCDCDC; /* will apply color */
 
 
                 <div class="panel panel-default" style="width: 90%; padding: 10px; margin: 10px" id="panel1">
-                    <div id="Tabs" role="tabpanel">
+                    <div id="Tabs" role="tabpanel" >
                         <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
+                        <ul class="nav nav-tabs" role="tablist" style="background-color: gray">
                             <li class="active"><a href="#hydrate" aria-controls="hydrate" role="tab" data-toggle="tab">Hydrate Shipment Analysis</a></li>
                             <li><a href="#wethydrate" aria-controls="wethydrate" role="tab" data-toggle="tab">Wet Hydrate Shipment Analysis</a></li>
                         </ul>

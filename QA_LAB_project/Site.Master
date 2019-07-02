@@ -4,98 +4,81 @@
 
 <html lang="en">
 <head runat="server">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noranda Lab Application</title>
+    <title>Noranda</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <style>
-        Body {
-            /*background-color: #dcdcdc*/
-            background-color: white;
-        }
+        a {
+  text-decoration: none;
+}
 
-        .wrap {
-            white-space: normal;
-        }
-      
+nav {
+    font-family: Arial;
+  
+}
 
-        #topnavbar {
-            margin: 0;
-            height: 80px;
-            background-image: url('Image/Noranda2.JPG')
-        }
+ul {
+  background: darkorange;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    font-size: medium
+}
 
-            #topnavbar.affix {
-                position: fixed;
-                top: 0;
-                width: 100%;
-                
-            }
+li {
+    color: #fff;
+  background: green;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+  transition-duration: 0.8s;
+}
+  
+li a {
+  color: #fff;
+}
 
+li:hover {
+    /*background: white;*/
+    cursor: pointer;
+}
 
-        .centerPanel {
-            /*border: 1px solid White;*/
-            z-index: 1;
-            position: relative;
-            margin: 0 auto;
-            top: 10px;
-            width: 800px;
-            height: 800px;
-        }
+ul li ul {
+    background: orange;
+    visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+    position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+    left: 0;
+  display: none;
+}
 
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
 
-        .GridViewEditRow input[type=text] {
-            width: 50px;
-        }
-        /* size textboxes */
-        .GridViewEditRow select {
-            width: 50px;
-        }
-
-      
-
-        select > option:hover {
-            color: white;
-            cursor: pointer;
-            background-color: #4169e1;
-        }
-
-        select {
-            -webkit-appearance: button;
-            -webkit-border-radius: 2px;
-            -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-            -webkit-padding-start: 2px;
-            -webkit-user-select: none;
-            background-position: center right;
-            background-repeat: no-repeat;
-            border: 1px solid #AAA;
-            color: #4169e1;
-            font-size: 10pt;
-            font-weight: bold;
-            margin: 0;
-            overflow: hidden;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-family: Arial;
-        }
-
-        .table-responsive {
-            background-color: #dcdcdc;
-        }
-        
+ul li ul li {
+    clear: both;
+  width: 100%;
+}
     </style>
 </head>
-<body onload="SetResolution()">
-    <form runat="server" id="myForm" autocomplete="on">
+<body style="background-image: url('Image/nature-1644511_1920.jpg')">
+    <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -103,7 +86,6 @@
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -116,84 +98,92 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+   <div class="navbar navbar-inverse navbar-fixed-top" style="height: 60px;">
+        <nav role="navigation" style="margin-left: 20%; margin-top: 10px">
+            <ul>
+                <li style="background-color: green"><a href="Main.aspx" style="font-size: large; margin: 0 0 5px 0;" >Home</a></li>
+                <li style="background-color: green"><a href="#" style="font-size: large; margin: 0 0 5px 0;"  background-color: green">Areas</a>
+                    <ul class="dropdown">
+                        <li><a href="ChargeControl2.aspx">Charge Control</a></li>
+                        <li><a href="DailyAlumina.aspx">Daily Alumina</a></li>
+                        <li><a href="EnvironmentalAnalysis">Environmental</a></li>
+                        <li><a href="HydrateAnalysis.aspx">Hydrate Analysis</a></li>
+                        <li><a href="KilnDryer">Kiln & Dryer</a></li>
+                        <li><a href="Misc">Misc Information</a></li>
+                        <li><a href="Sec_12">Sec I&II</a></li>
+                        <li><a href="Sec_III">Sec III</a></li>
 
-        <div class="navbar navbar-default navbar-fixed-top" id="topnavbar" style="margin-top: 0px">
-            <div class="container-fluid">
-                <div class="navbar-header" style="text-align: center">
+                    </ul>
+                </li>
+                <li style="font-size: large; margin: 0 0 5px 0;  background-color: green"><a href="#">Reporting</a>
+                    <ul class="dropdown" >
+                        <li style="background-color: green"><a href="Reporting">Reporting</a></li>
+                        <li><a href="ExcelDownloads">Excel Downloads</a></li>
+                        <li><a href="Specs">Product Specs</a></li>
+                    </ul>
+                </li>
+                <li style="font-size: large; margin: 0 0 5px 0;  background-color: green"><a href="#">Lab Ticket</a>
+                    <ul class="dropdown">
+                        <li><a href="LabTicket.aspx">Lab Ticket</a></li>
+                        <li><a href="QualityAlert.aspx">Quality Alert</a></li>
+                        <li><a href="HouseKeeping.aspx">Housekeeping</a></li>
+                        <li><a href="SampleInventory">Sample Inventory</a></li>
+                    </ul>
+                </li>
+                  <li style="font-size: large; margin: 0 0 5px 0;background-color: green"><a href="#" style="color:green">. . . .</a>
+                  
+                </li>
+                  <li style="font-size: large; margin: 0 0 5px 0;background-color: green"><a href="#" style="color:green">. . . .</a>
+                   
+                </li>
+                  <li style="font-size: large; margin: 0 0 5px 0; background-color: green"><a href="#" style="color:green">. . . .</a>
+                  
+                </li>
+
+
+            </ul>
+        </nav>
+  </div>
+        <%--<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div style="margin-left: 500px;"><a style="font-size: x-large; color: white" class="navbar-brand" runat="server">Noranda Alumina Lab Entry and Reporting </a></div>
+                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <br />
-                    <div style="margin-left:600px">
-                        <select name="forma" id="select" onchange="location = this.value;" style="border-radius: 6px; background-color: #dcdcdc;">
-                            <option value="">- - - Navigation Menu - - -</option>
-                            <option onmouseover="display();" value="Main.aspx">Main</option>
-                            <option value="EnvironmentalAnalysis.aspx">Environmental Analysis</option>
-                            <option value="ChargeControl2.aspx">Charge Control</option>
-                            <option value="DailyAlumina.aspx">Daily Alumina & Hydrate</option>
-                              <option value="ExcelDownloads.aspx">Excel Downloads</option>
-                            <option value="HydrateAnalysis.aspx">Hydrate Analysis</option>
-                            <option value="KilnDryer.aspx">Kiln & Dryer Data</option>
-                            <option value="LTQA.aspx">Lab Ticket & Quality Alert</option>
-                              <option value="Misc.aspx">Misc Information</option>
-                                <option value="Specs.aspx">Product Specs</option>
-                                <option value="Reporting.aspx">Reporting</option>
-                                    <option value="Sec_12.aspx">Sec I/II Data</option>
-                            <option value="Sec_III.aspx">Sec III Worksheet</option>
-                    
-
-                          
-                        
-                        
-                          
-                        
-                        </select>
-                    </div>
-                </div>
                     <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="dropbtn">
+                                    Dropdown <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
-
             </div>
-   
+        </div>--%>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-
+            
+           
         </div>
 
     </form>
-    <script>
-        //var allInputs = $(':text:visible'); //(1)collection of all the inputs I want (not all the inputs on my form)
-        //$(":text").on("keydown", function () {//(2)When an input field detects a keydown event
-        //    if (event.keyCode == 13) {
-        //        event.preventDefault();
-        //        //var nextInput = allInputs.get(allInputs.index(this) + 1);//(3)The next input in my collection of all inputs
-        //        //if (nextInput) {
-        //        //    nextInput.focus(); //(4)focus that next input if the input is not null
-        //        //}
-        //    }
-        //});
-
-
-      
-
-        function SetResolution() {
-            document.body.style.zoom = "100%";
-            //if (screen.width = 1280) {
-            //    var wdth = 1024; //Change this variable to match your configuration
-            //    document.body.style.zoom = screen.width / 1024;
-            //}
-        }
-
-
-
-    </script>
-
 </body>
 </html>

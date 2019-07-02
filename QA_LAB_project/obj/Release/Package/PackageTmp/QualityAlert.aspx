@@ -50,6 +50,7 @@ background: #DCDCDC; /* will apply color */
                         <asp:ListItem Text="Acid Insols" Value="1"></asp:ListItem>
                         <asp:ListItem Text="Caustic Seds" Value="2"></asp:ListItem>
                         <asp:ListItem Text="Evap Feed Caustic" Value="3"></asp:ListItem>
+                        <asp:ListItem Text="Filter Aid Solids" Value="90"></asp:ListItem>
                         <asp:ListItem Text="Leachable Soda Hydrate/Wet Cake" Value="4"></asp:ListItem>
                         <asp:ListItem Text="Leachable Soda Kiln Feed" Value="5"></asp:ListItem>
                         <asp:ListItem Text="LOI" Value="6"></asp:ListItem>

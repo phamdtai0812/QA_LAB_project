@@ -99,6 +99,84 @@
           <Property Name="PSCOLOR" Type="int" />
           <Property Name="CC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
+        <EntityType Name="LAB_DAILY_OP_Sample_Inventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Shift" Type="varchar" MaxLength="10" />
+          <Property Name="WOF" Type="int" />
+          <Property Name="WOF_comments" Type="varchar" MaxLength="50" />
+          <Property Name="SUF" Type="int" />
+          <Property Name="SUF_comments" Type="varchar" MaxLength="50" />
+          <Property Name="WUF" Type="int" />
+          <Property Name="WUF_comments" Type="varchar" MaxLength="50" />
+          <Property Name="MTL" Type="int" />
+          <Property Name="MTL_comments" Type="varchar" MaxLength="50" />
+          <Property Name="SRT" Type="int" />
+          <Property Name="SRT_comments" Type="varchar" MaxLength="50" />
+          <Property Name="Washer_Profile" Type="int" />
+          <Property Name="WP_comments" Type="varchar" MaxLength="50" />
+          <Property Name="Sulfide_Tank" Type="int" />
+          <Property Name="Sulfide_Tank_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Lime_Recovery" Type="int" />
+          <Property Name="Lime_Recovery_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Filter_Aid" Type="int" />
+          <Property Name="Filter_Aid_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Dilution_Floc" Type="int" />
+          <Property Name="Dilution_Floc_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="TT_Tops" Type="int" />
+          <Property Name="TT_Tops_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="ST_Tops" Type="int" />
+          <Property Name="ST_Tops_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="ST_38" Type="int" />
+          <Property Name="ST_38_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="TT_52" Type="int" />
+          <Property Name="TT_52_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="A6_UF" Type="int" />
+          <Property Name="A6_UF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="B6_UF" Type="int" />
+          <Property Name="B6_UF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="A7_UF" Type="int" />
+          <Property Name="A7_UF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="B7_UF" Type="int" />
+          <Property Name="B7_UF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="A7_OF" Type="int" />
+          <Property Name="A7_OF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="B7_OF" Type="int" />
+          <Property Name="B7_OF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Y15_UF" Type="int" />
+          <Property Name="Y15_UF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Y16_UF" Type="int" />
+          <Property Name="Y16_UF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Y15_OF" Type="int" />
+          <Property Name="Y15_OF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Y16_OF" Type="int" />
+          <Property Name="Y16_OF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="_1b_Cake" Type="int" />
+          <Property Name="_1b_Cake_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="_2b_Cake" Type="int" />
+          <Property Name="_2b_Cake_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="B_Filtrate_Cyc" Type="int" />
+          <Property Name="B_Filtrate_Cyc_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Tray_OF" Type="int" />
+          <Property Name="Tray_OF_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Kiln_Feed" Type="int" />
+          <Property Name="Kiln_Feed_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Dryer_Feed" Type="int" />
+          <Property Name="Dryer_Feed_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Kiln_Discharge" Type="int" />
+          <Property Name="Kiln_Discharge_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="Dryer_Discharge" Type="int" />
+          <Property Name="Dryer_Discharge_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="North_Fresh" Type="int" />
+          <Property Name="North_Fresh_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="South_Fresh" Type="int" />
+          <Property Name="South_Fresh_Cmt" Type="varchar" MaxLength="50" />
+          <Property Name="No5" Type="int" />
+          <Property Name="No5_Cmt" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="LAB_DAILYANALYSIS">
           <Key>
             <PropertyRef Name="DAILY_ID" />
@@ -177,7 +255,31 @@
           <Property Name="H2OSOUTH0600" Type="int" />
           <Property Name="H2OSOUTH1200" Type="int" />
           <Property Name="H2OSOUTH1800" Type="int" />
+          <Property Name="H2ONO5_0600" Type="int" />
+          <Property Name="H2ONO5_1200" Type="int" />
+          <Property Name="H2ONO5_1800" Type="int" />
+          <Property Name="H2ONO5_0000" Type="int" />
           <Property Name="H2O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAB_HOUSEKEEPING">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Shift" Type="varchar" MaxLength="50" />
+          <Property Name="Tech" Type="int" />
+          <Property Name="LabSumpPump1" Type="int" />
+          <Property Name="LabSumpPump2" Type="int" />
+          <Property Name="BenchTop" Type="int" />
+          <Property Name="Trash" Type="int" />
+          <Property Name="MSHAWorkSheet" Type="int" />
+          <Property Name="MissingLabSamples" Type="int" />
+          <Property Name="SampleDiscarded" Type="int" />
+          <Property Name="EmailsRead" Type="int" />
+          <Property Name="EquipmentOOS" Type="varchar" MaxLength="100" />
+          <Property Name="OOSSamples" Type="varchar" MaxLength="100" />
+          <Property Name="TimeStamp" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="LAB_HYDRATE_ANALYSIS">
           <Key>
@@ -269,7 +371,7 @@
             <PropertyRef Name="MD_ID" />
           </Key>
           <Property Name="MMISCDATE" Type="date" />
-          <Property Name="MMISCDESCR" Type="varchar" MaxLength="255" />
+          <Property Name="MMISCDESCR" Type="varchar(max)" />
           <Property Name="MMISCQTY" Type="varchar" MaxLength="50" />
           <Property Name="MMISCSIZE" Type="varchar" MaxLength="50" />
           <Property Name="CCROUND" Type="varchar" MaxLength="50" />
@@ -297,7 +399,7 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
           <Property Name="P325" Type="int" />
           <Property Name="UM" Type="int" />
           <Property Name="P325SA" Type="int" />
-          <Property Name="CAUS" Type="int" />
+          <Property Name="CAUS" Type="decimal" Precision="6" Scale="1" />
           <Property Name="AC" Type="decimal" Precision="6" Scale="3" />
           <Property Name="SOL" Type="decimal" Precision="6" Scale="3" />
           <Property Name="GPLSOL" Type="int" />
@@ -396,6 +498,13 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
           <Property Name="gv_control_name" Type="varchar" MaxLength="50" />
           <Property Name="Indx" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="LAB_TECHNICIAN">
+          <Key>
+            <PropertyRef Name="TechId" />
+          </Key>
+          <Property Name="TechId" Type="int" Nullable="false" />
+          <Property Name="TechName" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="LAB_WETCAKE_BARGE">
           <Key>
             <PropertyRef Name="WC_ID" />
@@ -423,15 +532,18 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
         <EntityContainer Name="LabModelStoreContainer">
           <EntitySet Name="LAB_CAUSTIC_CLEAN" EntityType="Self.LAB_CAUSTIC_CLEAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_CHARGECONTROL" EntityType="Self.LAB_CHARGECONTROL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LAB_DAILY_OP_Sample_Inventory" EntityType="Self.LAB_DAILY_OP_Sample_Inventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_DAILYANALYSIS" EntityType="Self.LAB_DAILYANALYSIS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_ENVIRONMENTAL" EntityType="Self.LAB_ENVIRONMENTAL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_H2O_TANK_DATA" EntityType="Self.LAB_H2O_TANK_DATA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LAB_HOUSEKEEPING" EntityType="Self.LAB_HOUSEKEEPING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_HYDRATE_ANALYSIS" EntityType="Self.LAB_HYDRATE_ANALYSIS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_KILN_DRYER" EntityType="Self.LAB_KILN_DRYER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_MISC" EntityType="Self.LAB_MISC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_SEC_III_DATA" EntityType="Self.LAB_SEC_III_DATA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_SEC1_DATA" EntityType="Self.LAB_SEC1_DATA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lab_TagTable" EntityType="Self.Lab_TagTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LAB_TECHNICIAN" EntityType="Self.LAB_TECHNICIAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_WETCAKE_BARGE" EntityType="Self.LAB_WETCAKE_BARGE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LAB_REPORT_NAMES" EntityType="Self.LAB_REPORT_NAMES" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -458,6 +570,9 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
           <EntitySet Name="LAB_DAILYANALYSIS" EntityType="LabModel.LAB_DAILYANALYSIS" />
           <EntitySet Name="Lab_TagTable" EntityType="LabModel.Lab_TagTable" />
           <EntitySet Name="LAB_HYDRATE_ANALYSIS" EntityType="LabModel.LAB_HYDRATE_ANALYSIS" />
+          <EntitySet Name="LAB_HOUSEKEEPING" EntityType="LabModel.LAB_HOUSEKEEPING" />
+          <EntitySet Name="LAB_TECHNICIAN" EntityType="LabModel.LAB_TECHNICIAN" />
+          <EntitySet Name="LAB_DAILY_OP_Sample_Inventory" EntityType="LabModel.LAB_DAILY_OP_Sample_Inventory" />
         </EntityContainer>
         <EntityType Name="LAB_CAUSTIC_CLEAN">
           <Key>
@@ -604,6 +719,10 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
           <Property Name="H2OSOUTH1200" Type="Int32" />
           <Property Name="H2OSOUTH1800" Type="Int32" />
           <Property Name="H2O_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="H2ONO5_0600" Type="Int32" />
+          <Property Name="H2ONO5_1200" Type="Int32" />
+          <Property Name="H2ONO5_1800" Type="Int32" />
+          <Property Name="H2ONO5_0000" Type="Int32" />
         </EntityType>
         <EntityType Name="LAB_KILN_DRYER">
           <Key>
@@ -780,7 +899,7 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
             <PropertyRef Name="MD_ID" />
           </Key>
           <Property Name="MMISCDATE" Type="DateTime" Precision="0" />
-          <Property Name="MMISCDESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MMISCDESCR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="MMISCQTY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MMISCSIZE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
@@ -871,6 +990,111 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
           <Property Name="LEACHSODA" Type="Decimal" Precision="10" Scale="3" />
           <Property Name="MOISTURE" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="HYDRATE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="LAB_HOUSEKEEPING">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BenchTop" Type="Int16" />
+          <Property Name="Trash" Type="Int16" />
+          <Property Name="MSHAWorkSheet" Type="Int16" />
+          <Property Name="MissingLabSamples" Type="Int16" />
+          <Property Name="SampleDiscarded" Type="Int16" />
+          <Property Name="EquipmentOOS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OOSSamples" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tech" Type="Int32" />
+          <Property Name="LabSumpPump1" Type="Int32" />
+          <Property Name="LabSumpPump2" Type="Int32" />
+          <Property Name="EmailsRead" Type="Int32" />
+          <Property Name="TimeStamp" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="LAB_TECHNICIAN">
+          <Key>
+            <PropertyRef Name="TechId" />
+          </Key>
+          <Property Name="TechName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TechId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LAB_DAILY_OP_Sample_Inventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Shift" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="WOF" Type="Int32" />
+          <Property Name="WOF_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUF" Type="Int32" />
+          <Property Name="SUF_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WUF" Type="Int32" />
+          <Property Name="WUF_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MTL" Type="Int32" />
+          <Property Name="MTL_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SRT" Type="Int32" />
+          <Property Name="SRT_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Washer_Profile" Type="Int32" />
+          <Property Name="WP_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sulfide_Tank" Type="Int32" />
+          <Property Name="Sulfide_Tank_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lime_Recovery" Type="Int32" />
+          <Property Name="Lime_Recovery_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Filter_Aid" Type="Int32" />
+          <Property Name="Filter_Aid_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dilution_Floc" Type="Int32" />
+          <Property Name="Dilution_Floc_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TT_Tops" Type="Int32" />
+          <Property Name="TT_Tops_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST_Tops" Type="Int32" />
+          <Property Name="ST_Tops_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST_38" Type="Int32" />
+          <Property Name="ST_38_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TT_52" Type="Int32" />
+          <Property Name="TT_52_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="A6_UF" Type="Int32" />
+          <Property Name="A6_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="B6_UF" Type="Int32" />
+          <Property Name="B6_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="A7_UF" Type="Int32" />
+          <Property Name="A7_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="B7_UF" Type="Int32" />
+          <Property Name="B7_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="A7_OF" Type="Int32" />
+          <Property Name="A7_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="B7_OF" Type="Int32" />
+          <Property Name="B7_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Y15_UF" Type="Int32" />
+          <Property Name="Y15_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Y16_UF" Type="Int32" />
+          <Property Name="Y16_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Y15_OF" Type="Int32" />
+          <Property Name="Y15_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Y16_OF" Type="Int32" />
+          <Property Name="Y16_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_1b_Cake" Type="Int32" />
+          <Property Name="C_1b_Cake_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_2b_Cake" Type="Int32" />
+          <Property Name="C_2b_Cake_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="B_Filtrate_Cyc" Type="Int32" />
+          <Property Name="B_Filtrate_Cyc_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tray_OF" Type="Int32" />
+          <Property Name="Tray_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kiln_Feed" Type="Int32" />
+          <Property Name="Kiln_Feed_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dryer_Feed" Type="Int32" />
+          <Property Name="Dryer_Feed_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kiln_Discharge" Type="Int32" />
+          <Property Name="Kiln_Discharge_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dryer_Discharge" Type="Int32" />
+          <Property Name="Dryer_Discharge_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="North_Fresh" Type="Int32" />
+          <Property Name="North_Fresh_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="South_Fresh" Type="Int32" />
+          <Property Name="South_Fresh_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="No5" Type="Int32" />
+          <Property Name="No5_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1015,6 +1239,10 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
           <EntitySetMapping Name="LAB_H2O_TANK_DATA">
             <EntityTypeMapping TypeName="LabModel.LAB_H2O_TANK_DATA">
               <MappingFragment StoreEntitySet="LAB_H2O_TANK_DATA">
+                <ScalarProperty Name="H2ONO5_0000" ColumnName="H2ONO5_0000" />
+                <ScalarProperty Name="H2ONO5_1800" ColumnName="H2ONO5_1800" />
+                <ScalarProperty Name="H2ONO5_1200" ColumnName="H2ONO5_1200" />
+                <ScalarProperty Name="H2ONO5_0600" ColumnName="H2ONO5_0600" />
                 <ScalarProperty Name="H2O_ID" ColumnName="H2O_ID" />
                 <ScalarProperty Name="H2OSOUTH1800" ColumnName="H2OSOUTH1800" />
                 <ScalarProperty Name="H2OSOUTH1200" ColumnName="H2OSOUTH1200" />
@@ -1304,6 +1532,114 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="LAB_HOUSEKEEPING">
+            <EntityTypeMapping TypeName="LabModel.LAB_HOUSEKEEPING">
+              <MappingFragment StoreEntitySet="LAB_HOUSEKEEPING">
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="EmailsRead" ColumnName="EmailsRead" />
+                <ScalarProperty Name="LabSumpPump2" ColumnName="LabSumpPump2" />
+                <ScalarProperty Name="LabSumpPump1" ColumnName="LabSumpPump1" />
+                <ScalarProperty Name="Tech" ColumnName="Tech" />
+                <ScalarProperty Name="OOSSamples" ColumnName="OOSSamples" />
+                <ScalarProperty Name="EquipmentOOS" ColumnName="EquipmentOOS" />
+                <ScalarProperty Name="SampleDiscarded" ColumnName="SampleDiscarded" />
+                <ScalarProperty Name="MissingLabSamples" ColumnName="MissingLabSamples" />
+                <ScalarProperty Name="MSHAWorkSheet" ColumnName="MSHAWorkSheet" />
+                <ScalarProperty Name="Trash" ColumnName="Trash" />
+                <ScalarProperty Name="BenchTop" ColumnName="BenchTop" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAB_TECHNICIAN">
+            <EntityTypeMapping TypeName="LabModel.LAB_TECHNICIAN">
+              <MappingFragment StoreEntitySet="LAB_TECHNICIAN">
+                <ScalarProperty Name="TechId" ColumnName="TechId" />
+                <ScalarProperty Name="TechName" ColumnName="TechName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LAB_DAILY_OP_Sample_Inventory">
+            <EntityTypeMapping TypeName="LabModel.LAB_DAILY_OP_Sample_Inventory">
+              <MappingFragment StoreEntitySet="LAB_DAILY_OP_Sample_Inventory">
+                <ScalarProperty Name="No5_Cmt" ColumnName="No5_Cmt" />
+                <ScalarProperty Name="No5" ColumnName="No5" />
+                <ScalarProperty Name="South_Fresh_Cmt" ColumnName="South_Fresh_Cmt" />
+                <ScalarProperty Name="South_Fresh" ColumnName="South_Fresh" />
+                <ScalarProperty Name="North_Fresh_Cmt" ColumnName="North_Fresh_Cmt" />
+                <ScalarProperty Name="North_Fresh" ColumnName="North_Fresh" />
+                <ScalarProperty Name="Dryer_Discharge_Cmt" ColumnName="Dryer_Discharge_Cmt" />
+                <ScalarProperty Name="Dryer_Discharge" ColumnName="Dryer_Discharge" />
+                <ScalarProperty Name="Kiln_Discharge_Cmt" ColumnName="Kiln_Discharge_Cmt" />
+                <ScalarProperty Name="Kiln_Discharge" ColumnName="Kiln_Discharge" />
+                <ScalarProperty Name="Dryer_Feed_Cmt" ColumnName="Dryer_Feed_Cmt" />
+                <ScalarProperty Name="Dryer_Feed" ColumnName="Dryer_Feed" />
+                <ScalarProperty Name="Kiln_Feed_Cmt" ColumnName="Kiln_Feed_Cmt" />
+                <ScalarProperty Name="Kiln_Feed" ColumnName="Kiln_Feed" />
+                <ScalarProperty Name="Tray_OF_Cmt" ColumnName="Tray_OF_Cmt" />
+                <ScalarProperty Name="Tray_OF" ColumnName="Tray_OF" />
+                <ScalarProperty Name="B_Filtrate_Cyc_Cmt" ColumnName="B_Filtrate_Cyc_Cmt" />
+                <ScalarProperty Name="B_Filtrate_Cyc" ColumnName="B_Filtrate_Cyc" />
+                <ScalarProperty Name="C_2b_Cake_Cmt" ColumnName="_2b_Cake_Cmt" />
+                <ScalarProperty Name="C_2b_Cake" ColumnName="_2b_Cake" />
+                <ScalarProperty Name="C_1b_Cake_Cmt" ColumnName="_1b_Cake_Cmt" />
+                <ScalarProperty Name="C_1b_Cake" ColumnName="_1b_Cake" />
+                <ScalarProperty Name="Y16_OF_Cmt" ColumnName="Y16_OF_Cmt" />
+                <ScalarProperty Name="Y16_OF" ColumnName="Y16_OF" />
+                <ScalarProperty Name="Y15_OF_Cmt" ColumnName="Y15_OF_Cmt" />
+                <ScalarProperty Name="Y15_OF" ColumnName="Y15_OF" />
+                <ScalarProperty Name="Y16_UF_Cmt" ColumnName="Y16_UF_Cmt" />
+                <ScalarProperty Name="Y16_UF" ColumnName="Y16_UF" />
+                <ScalarProperty Name="Y15_UF_Cmt" ColumnName="Y15_UF_Cmt" />
+                <ScalarProperty Name="Y15_UF" ColumnName="Y15_UF" />
+                <ScalarProperty Name="B7_OF_Cmt" ColumnName="B7_OF_Cmt" />
+                <ScalarProperty Name="B7_OF" ColumnName="B7_OF" />
+                <ScalarProperty Name="A7_OF_Cmt" ColumnName="A7_OF_Cmt" />
+                <ScalarProperty Name="A7_OF" ColumnName="A7_OF" />
+                <ScalarProperty Name="B7_UF_Cmt" ColumnName="B7_UF_Cmt" />
+                <ScalarProperty Name="B7_UF" ColumnName="B7_UF" />
+                <ScalarProperty Name="A7_UF_Cmt" ColumnName="A7_UF_Cmt" />
+                <ScalarProperty Name="A7_UF" ColumnName="A7_UF" />
+                <ScalarProperty Name="B6_UF_Cmt" ColumnName="B6_UF_Cmt" />
+                <ScalarProperty Name="B6_UF" ColumnName="B6_UF" />
+                <ScalarProperty Name="A6_UF_Cmt" ColumnName="A6_UF_Cmt" />
+                <ScalarProperty Name="A6_UF" ColumnName="A6_UF" />
+                <ScalarProperty Name="TT_52_Cmt" ColumnName="TT_52_Cmt" />
+                <ScalarProperty Name="TT_52" ColumnName="TT_52" />
+                <ScalarProperty Name="ST_38_Cmt" ColumnName="ST_38_Cmt" />
+                <ScalarProperty Name="ST_38" ColumnName="ST_38" />
+                <ScalarProperty Name="ST_Tops_Cmt" ColumnName="ST_Tops_Cmt" />
+                <ScalarProperty Name="ST_Tops" ColumnName="ST_Tops" />
+                <ScalarProperty Name="TT_Tops_Cmt" ColumnName="TT_Tops_Cmt" />
+                <ScalarProperty Name="TT_Tops" ColumnName="TT_Tops" />
+                <ScalarProperty Name="Dilution_Floc_Cmt" ColumnName="Dilution_Floc_Cmt" />
+                <ScalarProperty Name="Dilution_Floc" ColumnName="Dilution_Floc" />
+                <ScalarProperty Name="Filter_Aid_Cmt" ColumnName="Filter_Aid_Cmt" />
+                <ScalarProperty Name="Filter_Aid" ColumnName="Filter_Aid" />
+                <ScalarProperty Name="Lime_Recovery_Cmt" ColumnName="Lime_Recovery_Cmt" />
+                <ScalarProperty Name="Lime_Recovery" ColumnName="Lime_Recovery" />
+                <ScalarProperty Name="Sulfide_Tank_Cmt" ColumnName="Sulfide_Tank_Cmt" />
+                <ScalarProperty Name="Sulfide_Tank" ColumnName="Sulfide_Tank" />
+                <ScalarProperty Name="WP_comments" ColumnName="WP_comments" />
+                <ScalarProperty Name="Washer_Profile" ColumnName="Washer_Profile" />
+                <ScalarProperty Name="SRT_comments" ColumnName="SRT_comments" />
+                <ScalarProperty Name="SRT" ColumnName="SRT" />
+                <ScalarProperty Name="MTL_comments" ColumnName="MTL_comments" />
+                <ScalarProperty Name="MTL" ColumnName="MTL" />
+                <ScalarProperty Name="WUF_comments" ColumnName="WUF_comments" />
+                <ScalarProperty Name="WUF" ColumnName="WUF" />
+                <ScalarProperty Name="SUF_comments" ColumnName="SUF_comments" />
+                <ScalarProperty Name="SUF" ColumnName="SUF" />
+                <ScalarProperty Name="WOF_comments" ColumnName="WOF_comments" />
+                <ScalarProperty Name="WOF" ColumnName="WOF" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1318,7 +1654,7 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

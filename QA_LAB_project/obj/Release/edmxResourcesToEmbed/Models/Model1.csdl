@@ -14,6 +14,8 @@
     <EntitySet Name="LAB_DAILYANALYSIS" EntityType="LabModel.LAB_DAILYANALYSIS" />
     <EntitySet Name="Lab_TagTable" EntityType="LabModel.Lab_TagTable" />
     <EntitySet Name="LAB_HYDRATE_ANALYSIS" EntityType="LabModel.LAB_HYDRATE_ANALYSIS" />
+    <EntitySet Name="LAB_HOUSEKEEPING" EntityType="LabModel.LAB_HOUSEKEEPING" />
+    <EntitySet Name="LAB_TECHNICIAN" EntityType="LabModel.LAB_TECHNICIAN" />
   </EntityContainer>
   <EntityType Name="LAB_CAUSTIC_CLEAN">
     <Key>
@@ -160,6 +162,10 @@
     <Property Name="H2OSOUTH1200" Type="Int32" />
     <Property Name="H2OSOUTH1800" Type="Int32" />
     <Property Name="H2O_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="H2ONO5_0600" Type="Int32" />
+    <Property Name="H2ONO5_1200" Type="Int32" />
+    <Property Name="H2ONO5_1800" Type="Int32" />
+    <Property Name="H2ONO5_0000" Type="Int32" />
   </EntityType>
   <EntityType Name="LAB_KILN_DRYER">
     <Key>
@@ -336,7 +342,7 @@
       <PropertyRef Name="MD_ID" />
     </Key>
     <Property Name="MMISCDATE" Type="DateTime" Precision="0" />
-    <Property Name="MMISCDESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MMISCDESCR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="MMISCQTY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MMISCSIZE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
@@ -427,5 +433,28 @@
     <Property Name="LEACHSODA" Type="Decimal" Precision="10" Scale="3" />
     <Property Name="MOISTURE" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="HYDRATE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="LAB_HOUSEKEEPING">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TechId" Type="Int32" />
+    <Property Name="BenchTop" Type="Boolean" />
+    <Property Name="Trash" Type="Boolean" />
+    <Property Name="MSHAWorkSheet" Type="Boolean" />
+    <Property Name="MissingLabSamples" Type="Boolean" />
+    <Property Name="SampleDiscarded" Type="Boolean" />
+    <Property Name="EquipmentOOS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OOSSamples" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LAB_TECHNICIAN">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TechName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
