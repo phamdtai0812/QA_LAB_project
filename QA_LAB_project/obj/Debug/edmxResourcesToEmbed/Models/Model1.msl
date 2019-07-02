@@ -138,6 +138,10 @@
     <EntitySetMapping Name="LAB_H2O_TANK_DATA">
       <EntityTypeMapping TypeName="LabModel.LAB_H2O_TANK_DATA">
         <MappingFragment StoreEntitySet="LAB_H2O_TANK_DATA">
+          <ScalarProperty Name="H2ONO5_0000" ColumnName="H2ONO5_0000" />
+          <ScalarProperty Name="H2ONO5_1800" ColumnName="H2ONO5_1800" />
+          <ScalarProperty Name="H2ONO5_1200" ColumnName="H2ONO5_1200" />
+          <ScalarProperty Name="H2ONO5_0600" ColumnName="H2ONO5_0600" />
           <ScalarProperty Name="H2O_ID" ColumnName="H2O_ID" />
           <ScalarProperty Name="H2OSOUTH1800" ColumnName="H2OSOUTH1800" />
           <ScalarProperty Name="H2OSOUTH1200" ColumnName="H2OSOUTH1200" />
@@ -424,6 +428,114 @@
           <ScalarProperty Name="SADATE" ColumnName="SADATE" />
           <ScalarProperty Name="HA_TYPE" ColumnName="HA_TYPE" />
           <ScalarProperty Name="HA_ID" ColumnName="HA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_HOUSEKEEPING">
+      <EntityTypeMapping TypeName="LabModel.LAB_HOUSEKEEPING">
+        <MappingFragment StoreEntitySet="LAB_HOUSEKEEPING">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="EmailsRead" ColumnName="EmailsRead" />
+          <ScalarProperty Name="LabSumpPump2" ColumnName="LabSumpPump2" />
+          <ScalarProperty Name="LabSumpPump1" ColumnName="LabSumpPump1" />
+          <ScalarProperty Name="Tech" ColumnName="Tech" />
+          <ScalarProperty Name="OOSSamples" ColumnName="OOSSamples" />
+          <ScalarProperty Name="EquipmentOOS" ColumnName="EquipmentOOS" />
+          <ScalarProperty Name="SampleDiscarded" ColumnName="SampleDiscarded" />
+          <ScalarProperty Name="MissingLabSamples" ColumnName="MissingLabSamples" />
+          <ScalarProperty Name="MSHAWorkSheet" ColumnName="MSHAWorkSheet" />
+          <ScalarProperty Name="Trash" ColumnName="Trash" />
+          <ScalarProperty Name="BenchTop" ColumnName="BenchTop" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_TECHNICIAN">
+      <EntityTypeMapping TypeName="LabModel.LAB_TECHNICIAN">
+        <MappingFragment StoreEntitySet="LAB_TECHNICIAN">
+          <ScalarProperty Name="TechId" ColumnName="TechId" />
+          <ScalarProperty Name="TechName" ColumnName="TechName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_DAILY_OP_Sample_Inventory">
+      <EntityTypeMapping TypeName="LabModel.LAB_DAILY_OP_Sample_Inventory">
+        <MappingFragment StoreEntitySet="LAB_DAILY_OP_Sample_Inventory">
+          <ScalarProperty Name="No5_Cmt" ColumnName="No5_Cmt" />
+          <ScalarProperty Name="No5" ColumnName="No5" />
+          <ScalarProperty Name="South_Fresh_Cmt" ColumnName="South_Fresh_Cmt" />
+          <ScalarProperty Name="South_Fresh" ColumnName="South_Fresh" />
+          <ScalarProperty Name="North_Fresh_Cmt" ColumnName="North_Fresh_Cmt" />
+          <ScalarProperty Name="North_Fresh" ColumnName="North_Fresh" />
+          <ScalarProperty Name="Dryer_Discharge_Cmt" ColumnName="Dryer_Discharge_Cmt" />
+          <ScalarProperty Name="Dryer_Discharge" ColumnName="Dryer_Discharge" />
+          <ScalarProperty Name="Kiln_Discharge_Cmt" ColumnName="Kiln_Discharge_Cmt" />
+          <ScalarProperty Name="Kiln_Discharge" ColumnName="Kiln_Discharge" />
+          <ScalarProperty Name="Dryer_Feed_Cmt" ColumnName="Dryer_Feed_Cmt" />
+          <ScalarProperty Name="Dryer_Feed" ColumnName="Dryer_Feed" />
+          <ScalarProperty Name="Kiln_Feed_Cmt" ColumnName="Kiln_Feed_Cmt" />
+          <ScalarProperty Name="Kiln_Feed" ColumnName="Kiln_Feed" />
+          <ScalarProperty Name="Tray_OF_Cmt" ColumnName="Tray_OF_Cmt" />
+          <ScalarProperty Name="Tray_OF" ColumnName="Tray_OF" />
+          <ScalarProperty Name="B_Filtrate_Cyc_Cmt" ColumnName="B_Filtrate_Cyc_Cmt" />
+          <ScalarProperty Name="B_Filtrate_Cyc" ColumnName="B_Filtrate_Cyc" />
+          <ScalarProperty Name="C_2b_Cake_Cmt" ColumnName="_2b_Cake_Cmt" />
+          <ScalarProperty Name="C_2b_Cake" ColumnName="_2b_Cake" />
+          <ScalarProperty Name="C_1b_Cake_Cmt" ColumnName="_1b_Cake_Cmt" />
+          <ScalarProperty Name="C_1b_Cake" ColumnName="_1b_Cake" />
+          <ScalarProperty Name="Y16_OF_Cmt" ColumnName="Y16_OF_Cmt" />
+          <ScalarProperty Name="Y16_OF" ColumnName="Y16_OF" />
+          <ScalarProperty Name="Y15_OF_Cmt" ColumnName="Y15_OF_Cmt" />
+          <ScalarProperty Name="Y15_OF" ColumnName="Y15_OF" />
+          <ScalarProperty Name="Y16_UF_Cmt" ColumnName="Y16_UF_Cmt" />
+          <ScalarProperty Name="Y16_UF" ColumnName="Y16_UF" />
+          <ScalarProperty Name="Y15_UF_Cmt" ColumnName="Y15_UF_Cmt" />
+          <ScalarProperty Name="Y15_UF" ColumnName="Y15_UF" />
+          <ScalarProperty Name="B7_OF_Cmt" ColumnName="B7_OF_Cmt" />
+          <ScalarProperty Name="B7_OF" ColumnName="B7_OF" />
+          <ScalarProperty Name="A7_OF_Cmt" ColumnName="A7_OF_Cmt" />
+          <ScalarProperty Name="A7_OF" ColumnName="A7_OF" />
+          <ScalarProperty Name="B7_UF_Cmt" ColumnName="B7_UF_Cmt" />
+          <ScalarProperty Name="B7_UF" ColumnName="B7_UF" />
+          <ScalarProperty Name="A7_UF_Cmt" ColumnName="A7_UF_Cmt" />
+          <ScalarProperty Name="A7_UF" ColumnName="A7_UF" />
+          <ScalarProperty Name="B6_UF_Cmt" ColumnName="B6_UF_Cmt" />
+          <ScalarProperty Name="B6_UF" ColumnName="B6_UF" />
+          <ScalarProperty Name="A6_UF_Cmt" ColumnName="A6_UF_Cmt" />
+          <ScalarProperty Name="A6_UF" ColumnName="A6_UF" />
+          <ScalarProperty Name="TT_52_Cmt" ColumnName="TT_52_Cmt" />
+          <ScalarProperty Name="TT_52" ColumnName="TT_52" />
+          <ScalarProperty Name="ST_38_Cmt" ColumnName="ST_38_Cmt" />
+          <ScalarProperty Name="ST_38" ColumnName="ST_38" />
+          <ScalarProperty Name="ST_Tops_Cmt" ColumnName="ST_Tops_Cmt" />
+          <ScalarProperty Name="ST_Tops" ColumnName="ST_Tops" />
+          <ScalarProperty Name="TT_Tops_Cmt" ColumnName="TT_Tops_Cmt" />
+          <ScalarProperty Name="TT_Tops" ColumnName="TT_Tops" />
+          <ScalarProperty Name="Dilution_Floc_Cmt" ColumnName="Dilution_Floc_Cmt" />
+          <ScalarProperty Name="Dilution_Floc" ColumnName="Dilution_Floc" />
+          <ScalarProperty Name="Filter_Aid_Cmt" ColumnName="Filter_Aid_Cmt" />
+          <ScalarProperty Name="Filter_Aid" ColumnName="Filter_Aid" />
+          <ScalarProperty Name="Lime_Recovery_Cmt" ColumnName="Lime_Recovery_Cmt" />
+          <ScalarProperty Name="Lime_Recovery" ColumnName="Lime_Recovery" />
+          <ScalarProperty Name="Sulfide_Tank_Cmt" ColumnName="Sulfide_Tank_Cmt" />
+          <ScalarProperty Name="Sulfide_Tank" ColumnName="Sulfide_Tank" />
+          <ScalarProperty Name="WP_comments" ColumnName="WP_comments" />
+          <ScalarProperty Name="Washer_Profile" ColumnName="Washer_Profile" />
+          <ScalarProperty Name="SRT_comments" ColumnName="SRT_comments" />
+          <ScalarProperty Name="SRT" ColumnName="SRT" />
+          <ScalarProperty Name="MTL_comments" ColumnName="MTL_comments" />
+          <ScalarProperty Name="MTL" ColumnName="MTL" />
+          <ScalarProperty Name="WUF_comments" ColumnName="WUF_comments" />
+          <ScalarProperty Name="WUF" ColumnName="WUF" />
+          <ScalarProperty Name="SUF_comments" ColumnName="SUF_comments" />
+          <ScalarProperty Name="SUF" ColumnName="SUF" />
+          <ScalarProperty Name="WOF_comments" ColumnName="WOF_comments" />
+          <ScalarProperty Name="WOF" ColumnName="WOF" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

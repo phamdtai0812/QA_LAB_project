@@ -33,13 +33,12 @@ background: #DCDCDC; /* will apply color */
     background-color: #e6e6e6 
 }
     </style>
-    <br />
-    <br />
+   <br />
     <div class="panel panel-default" style="width: 800px; margin:auto">
         <div class="panel-heading">
-           <div>
-    <p style="color:white">Charge Control Information -- <%= ccround_ %></p>
-</div>
+            <div>
+                <p style="color: white">Charge Control Information -- <%= ccround_ %></p>
+            </div>
         </div>
         <div class="panel-body">
             <div class="row">
@@ -72,6 +71,13 @@ background: #DCDCDC; /* will apply color */
                 <div class="col-md-2">
                     <asp:Button ID="btnSave" Text="Save" Style="width: 80px; margin-left: 150px" runat="server" class="btn btn-secondary" OnClientClick="return exFunction();"  OnClick="SaveButtonClick" />
                 </div>
+                <div class="col-md-2">
+
+                </div>
+                 <div class="col-md-2">
+                      <asp:Button ID="btnSend" Text="Send Data to Pi"  Style="width: 120px;"  runat="server" class="btn btn-secondary"  OnClick="ResendDataToPi" ToolTip="Send Data to Pi" />
+                </div>
+               
                
             </div>
             
@@ -165,9 +171,9 @@ background: #DCDCDC; /* will apply color */
                 </div>
           </div>
 
-              <div class="col-md-4">
-                       <asp:Button ID="Button1" Text="..."  Style="width: 40px;"  runat="server" class="btn btn-secondary"  OnClick="ResendDataToPi" ToolTip="Resend Data to Pi" />
-                </div>
+             <%-- <div class="col-md-4">
+                     
+                </div>--%>
     </div>
 </div>
 
@@ -288,6 +294,7 @@ background: #DCDCDC; /* will apply color */
              var role = (document.getElementById('MainContent_role').value);
              if (role != "Admin") {
                  document.getElementById('MainContent_btnSave').style.display = "none";
+                  document.getElementById('MainContent_btnSend').style.display = "none";
              }
            
              $.ajax({

@@ -37,7 +37,7 @@ background: #DCDCDC; /* will apply color */
 <%--    <div class="container-fluid main-container" style="margin-top: 2px">
         <div class="col-md-12 content col-xs-offset-2">--%>
     <br />
-    <br />
+  
      <div class="panel panel-default" style="width: 800px; margin:auto">
         <div class="panel-heading">
          <p style="color:white">Daily Alumina & Hydrate Analysis</p>
@@ -65,10 +65,10 @@ background: #DCDCDC; /* will apply color */
                 <div class="panel panel-default" style="width: 90%; padding: 10px; margin: 10px" id="panel1">
                     <div id="Tabs" role="tabpanel">
                         <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#aluminadaily" aria-controls="aluminadaily" role="tab" data-toggle="tab">Alumina Daily Comp. Analysis</a></li>
-                            <li><a href="#hydratedaily" aria-controls="hydratedaily" role="tab" data-toggle="tab">Hydrate Daily Comp. Analysis</a></li>
-                            <li><a href="#wethydratedaily" aria-controls="wethydratedaily" role="tab" data-toggle="tab">Wet Hydrate Daily Comp. Analysis</a></li>
+                        <ul class="nav nav-tabs" role="tablist"  style="background-color: gray">
+                            <li class="active"><a href="#aluminadaily" aria-controls="aluminadaily" role="tab" data-toggle="tab">Alumina  Analysis</a></li>
+                            <li><a href="#hydratedaily" aria-controls="hydratedaily" role="tab" data-toggle="tab">Hydrate Analysis</a></li>
+                            <li><a href="#wethydratedaily" aria-controls="wethydratedaily" role="tab" data-toggle="tab">Wet Hydrate Analysis</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content" style="padding-top: 20px">

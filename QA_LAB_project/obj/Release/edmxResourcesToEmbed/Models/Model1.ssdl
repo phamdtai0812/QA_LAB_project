@@ -172,7 +172,27 @@
     <Property Name="H2OSOUTH0600" Type="int" />
     <Property Name="H2OSOUTH1200" Type="int" />
     <Property Name="H2OSOUTH1800" Type="int" />
+    <Property Name="H2ONO5_0600" Type="int" />
+    <Property Name="H2ONO5_1200" Type="int" />
+    <Property Name="H2ONO5_1800" Type="int" />
+    <Property Name="H2ONO5_0000" Type="int" />
     <Property Name="H2O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_HOUSEKEEPING">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Shift" Type="varchar" MaxLength="50" />
+    <Property Name="TechId" Type="int" />
+    <Property Name="BenchTop" Type="bit" />
+    <Property Name="Trash" Type="bit" />
+    <Property Name="MSHAWorkSheet" Type="bit" />
+    <Property Name="MissingLabSamples" Type="bit" />
+    <Property Name="SampleDiscarded" Type="bit" />
+    <Property Name="EquipmentOOS" Type="varchar" MaxLength="100" />
+    <Property Name="OOSSamples" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="LAB_HYDRATE_ANALYSIS">
     <Key>
@@ -264,7 +284,7 @@
       <PropertyRef Name="MD_ID" />
     </Key>
     <Property Name="MMISCDATE" Type="date" />
-    <Property Name="MMISCDESCR" Type="varchar" MaxLength="255" />
+    <Property Name="MMISCDESCR" Type="varchar(max)" />
     <Property Name="MMISCQTY" Type="varchar" MaxLength="50" />
     <Property Name="MMISCSIZE" Type="varchar" MaxLength="50" />
     <Property Name="CCROUND" Type="varchar" MaxLength="50" />
@@ -292,7 +312,7 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
     <Property Name="P325" Type="int" />
     <Property Name="UM" Type="int" />
     <Property Name="P325SA" Type="int" />
-    <Property Name="CAUS" Type="int" />
+    <Property Name="CAUS" Type="decimal" Precision="6" Scale="1" />
     <Property Name="AC" Type="decimal" Precision="6" Scale="3" />
     <Property Name="SOL" Type="decimal" Precision="6" Scale="3" />
     <Property Name="GPLSOL" Type="int" />
@@ -391,6 +411,13 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
     <Property Name="gv_control_name" Type="varchar" MaxLength="50" />
     <Property Name="Indx" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="LAB_TECHNICIAN">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TechName" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="LAB_WETCAKE_BARGE">
     <Key>
       <PropertyRef Name="WC_ID" />
@@ -421,12 +448,14 @@ warning 6002: The table/view 'Lab.dbo.LAB_REPORT_NAMES' does not have a primary 
     <EntitySet Name="LAB_DAILYANALYSIS" EntityType="Self.LAB_DAILYANALYSIS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_ENVIRONMENTAL" EntityType="Self.LAB_ENVIRONMENTAL" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_H2O_TANK_DATA" EntityType="Self.LAB_H2O_TANK_DATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_HOUSEKEEPING" EntityType="Self.LAB_HOUSEKEEPING" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_HYDRATE_ANALYSIS" EntityType="Self.LAB_HYDRATE_ANALYSIS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_KILN_DRYER" EntityType="Self.LAB_KILN_DRYER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_MISC" EntityType="Self.LAB_MISC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_SEC_III_DATA" EntityType="Self.LAB_SEC_III_DATA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_SEC1_DATA" EntityType="Self.LAB_SEC1_DATA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Lab_TagTable" EntityType="Self.Lab_TagTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAB_TECHNICIAN" EntityType="Self.LAB_TECHNICIAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_WETCAKE_BARGE" EntityType="Self.LAB_WETCAKE_BARGE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LAB_REPORT_NAMES" EntityType="Self.LAB_REPORT_NAMES" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 

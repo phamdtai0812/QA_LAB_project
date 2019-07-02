@@ -138,6 +138,10 @@
     <EntitySetMapping Name="LAB_H2O_TANK_DATA">
       <EntityTypeMapping TypeName="LabModel.LAB_H2O_TANK_DATA">
         <MappingFragment StoreEntitySet="LAB_H2O_TANK_DATA">
+          <ScalarProperty Name="H2ONO5_0000" ColumnName="H2ONO5_0000" />
+          <ScalarProperty Name="H2ONO5_1800" ColumnName="H2ONO5_1800" />
+          <ScalarProperty Name="H2ONO5_1200" ColumnName="H2ONO5_1200" />
+          <ScalarProperty Name="H2ONO5_0600" ColumnName="H2ONO5_0600" />
           <ScalarProperty Name="H2O_ID" ColumnName="H2O_ID" />
           <ScalarProperty Name="H2OSOUTH1800" ColumnName="H2OSOUTH1800" />
           <ScalarProperty Name="H2OSOUTH1200" ColumnName="H2OSOUTH1200" />
@@ -424,6 +428,31 @@
           <ScalarProperty Name="SADATE" ColumnName="SADATE" />
           <ScalarProperty Name="HA_TYPE" ColumnName="HA_TYPE" />
           <ScalarProperty Name="HA_ID" ColumnName="HA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_HOUSEKEEPING">
+      <EntityTypeMapping TypeName="LabModel.LAB_HOUSEKEEPING">
+        <MappingFragment StoreEntitySet="LAB_HOUSEKEEPING">
+          <ScalarProperty Name="OOSSamples" ColumnName="OOSSamples" />
+          <ScalarProperty Name="EquipmentOOS" ColumnName="EquipmentOOS" />
+          <ScalarProperty Name="SampleDiscarded" ColumnName="SampleDiscarded" />
+          <ScalarProperty Name="MissingLabSamples" ColumnName="MissingLabSamples" />
+          <ScalarProperty Name="MSHAWorkSheet" ColumnName="MSHAWorkSheet" />
+          <ScalarProperty Name="Trash" ColumnName="Trash" />
+          <ScalarProperty Name="BenchTop" ColumnName="BenchTop" />
+          <ScalarProperty Name="TechId" ColumnName="TechId" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAB_TECHNICIAN">
+      <EntityTypeMapping TypeName="LabModel.LAB_TECHNICIAN">
+        <MappingFragment StoreEntitySet="LAB_TECHNICIAN">
+          <ScalarProperty Name="TechName" ColumnName="TechName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

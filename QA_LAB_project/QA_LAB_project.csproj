@@ -16,7 +16,7 @@
     <RootNamespace>QA_LAB_project</RootNamespace>
     <AssemblyName>QA_LAB_project</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
@@ -115,6 +115,7 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -188,9 +189,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background_Image1.jpg" />
+    <Content Include="Image\background_Image1.jpg" />
+    <Content Include="Image\nature-1644511_1920.jpg" />
+    <Content Include="Image\Nature2.jpeg" />
+    <Content Include="Image\NorandaAlumina.jpg" />
+    <Content Include="INV_LAB_MISC.aspx" />
+    <Content Include="Inventory.aspx" />
+    <Content Include="KilnDryer.aspx" />
+    <Content Include="SampleInventory.aspx" />
+    <Content Include="HouseKeeping.aspx" />
     <Content Include="Image\4169E1.png" />
-    <Content Include="Image\Noranda2.JPG" />
-    <Content Include="Image\White.png" />
     <Content Include="QualityAlert.aspx" />
     <Content Include="LTQA.aspx" />
     <Content Include="LabTicket.aspx" />
@@ -201,7 +210,6 @@
     <Content Include="H30.aspx" />
     <Content Include="HydrateAnalysis.aspx" />
     <Content Include="Image\Noranda Alumina Logo.PNG" />
-    <Content Include="KilnDryer.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -221,16 +229,15 @@
     <Content Include="Page6.aspx" />
     <Content Include="Page5.aspx" />
     <Content Include="ProductionDay.aspx" />
+    <Content Include="Scripts\html2canvas.js" />
+    <Content Include="Scripts\html2canvas.min.js" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WH30.aspx" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Image\cool2.jpg" />
     <Content Include="Image\Picture2.png" />
-    <Content Include="Image\square.png" />
-    <Content Include="Image\square1.png" />
     <Content Include="Misc.aspx" />
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -294,6 +301,50 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="INV_LAB_MISC.aspx.cs">
+      <DependentUpon>INV_LAB_MISC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="INV_LAB_MISC.aspx.designer.cs">
+      <DependentUpon>INV_LAB_MISC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.aspx.cs">
+      <DependentUpon>Inventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory.aspx.designer.cs">
+      <DependentUpon>Inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KilnDryer.aspx.cs">
+      <DependentUpon>KilnDryer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KilnDryer.aspx.designer.cs">
+      <DependentUpon>KilnDryer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleInventory.aspx.cs">
+      <DependentUpon>SampleInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleInventory.aspx.designer.cs">
+      <DependentUpon>SampleInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HouseKeeping.aspx.cs">
+      <DependentUpon>HouseKeeping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HouseKeeping.aspx.designer.cs">
+      <DependentUpon>HouseKeeping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LAB_DAILY_OP_Sample_Inventory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LAB_HOUSEKEEPING.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LAB_TECHNICIAN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="QualityAlert.aspx.cs">
       <DependentUpon>QualityAlert.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -357,13 +408,6 @@
     </Compile>
     <Compile Include="HydrateAnalysis.aspx.designer.cs">
       <DependentUpon>HydrateAnalysis.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="KilnDryer.aspx.cs">
-      <DependentUpon>KilnDryer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="KilnDryer.aspx.designer.cs">
-      <DependentUpon>KilnDryer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -638,7 +682,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56885</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56885/</IISUrl>
+          <IISUrl>http://localhost/QA_LAB_project</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

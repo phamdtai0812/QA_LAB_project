@@ -40,7 +40,8 @@ background: #DCDCDC; /* will apply color */
            <%--     <p style="color:white">Lab Ticket &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Quality Alert</p>--%>
                  <asp:HyperLink id="labticket"  NavigateUrl="~/LabTicket.aspx" Text="Lab Ticket" runat="server" ForeColor="White"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
              <%--   <asp:HyperLink id="qualityalert"  NavigateUrl="#" Text="Quality Alert" runat="server" ForeColor="White"/>--%>
-                 <asp:HyperLink id="qualityalert"  NavigateUrl="~/QualityAlert.aspx" Text="Quality Alert" runat="server" ForeColor="White"/> 
+                 <asp:HyperLink id="qualityalert"  NavigateUrl="~/QualityAlert.aspx" Text="Quality Alert" runat="server" ForeColor="White"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <asp:HyperLink id="housekeeping"  NavigateUrl="~/HouseKeeping.aspx" Text="Housekeeping " runat="server" ForeColor="White"/> 
             </div>
           
         </div>

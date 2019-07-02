@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -141,6 +142,8 @@ namespace QA_LAB_project
 
         protected void SaveButtonClick(object sender, EventArgs e)
         {
+         
+
             try
             {
                 //st top samples
@@ -446,8 +449,16 @@ namespace QA_LAB_project
                 this.Response.Redirect(this.Request.Url.ToString());
 
             }
-            catch (Exception ex)
+            catch (Exception exs)
             {
+                string filePath = @"C:\Error.txt";
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine("Message :" + exs.Message + "<br/>" + Environment.NewLine + "StackTrace :" + exs.StackTrace +
+                       "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
+                    writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
+                }
             }
         }
         public static bool DSTcheck()
@@ -608,8 +619,16 @@ namespace QA_LAB_project
                     myPIServer.Disconnect();
                 } 
             }
-            catch (Exception ex)
+            catch (Exception exs)
             {
+                string filePath = @"C:\Error.txt";
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine("Message :" + exs.Message + "<br/>" + Environment.NewLine + "StackTrace :" + exs.StackTrace +
+                       "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
+                    writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
+                }
             }
             //*************************End*******************************
         }

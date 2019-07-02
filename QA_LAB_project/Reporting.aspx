@@ -118,7 +118,7 @@ color: white;
 
     </style>
     <br />
-    <br />
+ 
 
      <div class="panel panel-default" style="width: 800px; margin: auto">
             <div class="panel-heading">

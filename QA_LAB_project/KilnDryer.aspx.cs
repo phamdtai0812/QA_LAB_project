@@ -251,9 +251,17 @@ namespace QA_LAB_project
                          " inner join[Lab].[dbo].[LAB_KILN_DRYER] s on s.KILN_ID = t.KILN_ID where s.kddate = '" + date + "' ";
                 //hydrate dryer
                 query += "SELECT '0600' AS[TIME],  [HD0600LS] AS [L-Soda] ,[HD0600RF] AS [Reflect] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "' " +
-                        " UNION ALL SELECT '1100' AS[TIME], [HD1100LS],[HD1100RF] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "' " +
-                        " UNION ALL SELECT '1800' AS[TIME] ,[HD1800LS],[HD1800RF] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "'  " +
-                        " UNION ALL SELECT '2200' AS[TIME], [HD2200LS] ,[HD2200RF] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "'  ";
+                        //" UNION ALL SELECT '1100' AS[TIME], [HD1100LS],[HD1100RF] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "' " +
+                        " UNION ALL SELECT '1800' AS[TIME] ,[HD1800LS],[HD1800RF] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "'  ";
+                        //" UNION ALL SELECT '2200' AS[TIME], [HD2200LS] ,[HD2200RF] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "'  ";
+
+
+                //dryer #5
+                query += " SELECT '0600' AS [TIME],  [DRYERNO5_0600LS] AS [L-Soda]  FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "' " +
+                     //" UNION ALL SELECT '1100' AS[TIME], [HD1100LS],[HD1100RF] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "' " +
+                     " UNION ALL SELECT '1800' AS [TIME] ,[DRYERNO5_1800LS] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "'  ";
+                //" UNION ALL SELECT '2200' AS[TIME], [HD2200LS] ,[HD2200RF] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "'  ";
+
                 //dryer feed moisture
                 query += "SELECT HDFM0600 as [-], [KFM] AS[-1-], [KFM2] AS[-2-],[KFM3] AS[-3-] FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "' ";
                 //Processs samples metals Analysis
@@ -266,6 +274,7 @@ namespace QA_LAB_project
         " where kddate = '" + date + "' " +
         " union all select '6FT' as [-], KFM0600_1, KFM0600_2, KFM0600_3, FT6 FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "' ";
                 query += "SELECT KILN_ID FROM[Lab].[dbo].[LAB_KILN_DRYER] where kddate = '" + date + "'";
+
                 using (SqlConnection con = new SqlConnection(strConnString))
                 {
                     SqlCommand cmd = new SqlCommand(query);
@@ -362,6 +371,7 @@ namespace QA_LAB_project
                         gv_hydryer.DataSource = ds.Tables[5];
                         gv_hydryer.DataBind();
                     }
+                  
                     else
                     {
                         ds.Tables[5].Rows.Add(ds.Tables[5].NewRow());
@@ -375,12 +385,18 @@ namespace QA_LAB_project
                     }
                     if (ds.Tables[6].Rows.Count > 0)
                     {
-                        gv_dryerfm.DataSource = ds.Tables[6];
+                        gv_dryer5.DataSource = ds.Tables[6];
+                        gv_dryer5.DataBind();
+                    }
+
+                    if (ds.Tables[7].Rows.Count > 0)
+                    {
+                        gv_dryerfm.DataSource = ds.Tables[7];
                         gv_dryerfm.DataBind();
                     }
                     else
                     {
-                        ds.Tables[6].Rows.Add(ds.Tables[6].NewRow());
+                        ds.Tables[7].Rows.Add(ds.Tables[7].NewRow());
                         gv_dryerfm.DataSource = ds;
                         gv_hydryer.DataBind();
                         int columncount = gv_dryerfm.Rows[1].Cells.Count;
@@ -389,14 +405,14 @@ namespace QA_LAB_project
                         gv_dryerfm.Rows[0].Cells[0].ColumnSpan = columncount;
                         //gv_dryerfm.Rows[0].Cells[0].Text = "No Records Found";
                     }
-                    if (ds.Tables[7].Rows.Count > 0)
+                    if (ds.Tables[8].Rows.Count > 0)
                     {
-                        gv_psma.DataSource = ds.Tables[7];
+                        gv_psma.DataSource = ds.Tables[8];
                         gv_psma.DataBind();
                     }
                     else
                     {
-                        ds.Tables[7].Rows.Add(ds.Tables[7].NewRow());
+                        ds.Tables[8].Rows.Add(ds.Tables[8].NewRow());
                         gv_psma.DataSource = ds;
                         gv_psma.DataBind();
                         int columncount = gv_psma.Rows[1].Cells.Count;
@@ -407,9 +423,9 @@ namespace QA_LAB_project
                     }
 
                    
-                        if (ds.Tables[8].Rows.Count > 0)
+                        if (ds.Tables[9].Rows.Count > 0)
                         {
-                            DataRow row = ds.Tables[8].Rows[0];
+                            DataRow row = ds.Tables[9].Rows[0];
                             Session["kiln_id"] = row[0].ToString() ;
                             string s = Session["kiln_id"].ToString();
                         }
@@ -449,6 +465,63 @@ namespace QA_LAB_project
         {
             try
             {
+
+                //Dryer #5
+                DataTable dryer5DT = new DataTable();
+                dryer5DT.Columns.Add("lsoda", typeof(string));
+                foreach (GridViewRow rows in gv_dryer5.Rows)
+                {
+
+                    string client_ID = rows.ClientID;
+                    string client_RowIndex = rows.RowIndex.ToString();
+                    string id = Session["kiln_id"].ToString();
+
+
+                    System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_dryer5ls");
+                    string lsoda = myTextBox1.Text;
+
+
+                    var row = dryer5DT.NewRow();
+                    dryer5DT.Rows.Add(row);
+                    type = "dryer5";
+                    row["lsoda"] = lsoda;
+
+
+                }
+               Update(type, dryer5DT);
+
+                //HYDRATE DRYER
+                DataTable lsodaDT = new DataTable();
+                lsodaDT.Columns.Add("Time", typeof(string));
+                lsodaDT.Columns.Add("lsoda", typeof(string));
+                lsodaDT.Columns.Add("reflect", typeof(string));
+                foreach (GridViewRow rows in gv_hydryer.Rows)
+                {
+                    //GridViewRow row_ = (sender as LinkButton).NamingContainer as GridViewRow;
+                    string client_ID = rows.ClientID;
+                    string client_RowIndex = rows.RowIndex.ToString();
+                    string id = Session["kiln_id"].ToString();
+
+
+                    System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_lsoda");
+                    string lsoda = myTextBox1.Text;
+                    System.Web.UI.WebControls.TextBox myTextBox2 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_reflect");
+                    string reflect = myTextBox2.Text;
+
+                    var row = lsodaDT.NewRow();
+                    lsodaDT.Rows.Add(row);
+                    type = "lsoda";
+                    row["lsoda"] = lsoda;
+                    row["reflect"] = reflect;
+
+                }
+                Update(type, lsodaDT);
+
+
+               
+
+
+
                 //DateTime date_;
                 //if (HttpContext.Current.Session["kiln_date"] == null)
                 //{
@@ -490,7 +563,9 @@ namespace QA_LAB_project
                         type = "KFLS0600";
                     else
                         type = "KFLS1800";
-                    Update(type, dt);
+
+
+                   Update(type, dt);
                 }
                 //LOI..
                 foreach (GridViewRow rows in gv_kdloi.Rows)
@@ -518,10 +593,11 @@ namespace QA_LAB_project
                         type = "KDLOI2200";
                     else
                         type = "KDLOI1000";
+
                     Update(type, kdloiDT);
-                    }
-                    //KDNA..
-                    foreach (GridViewRow rows in gv_kdna.Rows)
+                }
+                //KDNA..
+                foreach (GridViewRow rows in gv_kdna.Rows)
                 {
                     //GridViewRow row_ = (sender as LinkButton).NamingContainer as GridViewRow;
 
@@ -534,23 +610,25 @@ namespace QA_LAB_project
                     kdnaDT.Columns.Add("-3-", typeof(string));
                     var row = kdnaDT.NewRow();
                     kdnaDT.Rows.Add(row);
-                   
-                        System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdna1");
-                        r1c1 = myTextBox1.Text;
-                        System.Web.UI.WebControls.TextBox myTextBox2 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdna2");
-                        r1c2 = myTextBox2.Text;
-                        System.Web.UI.WebControls.TextBox myTextBox3 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdna3");
-                        r1c3 = myTextBox3.Text;
 
-                        row["-1-"] = r1c1;
-                        row["-2-"] = r1c2;
-                        row["-3-"] = r1c3;
+                    System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdna1");
+                    r1c1 = myTextBox1.Text;
+                    System.Web.UI.WebControls.TextBox myTextBox2 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdna2");
+                    r1c2 = myTextBox2.Text;
+                    System.Web.UI.WebControls.TextBox myTextBox3 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdna3");
+                    r1c3 = myTextBox3.Text;
 
-                        if (client_RowIndex == "0")
-                            type = "KDNA2200";
-                        else
-                            type = "KDNA1000";
-                        Update(type, kdnaDT);
+                    row["-1-"] = r1c1;
+                    row["-2-"] = r1c2;
+                    row["-3-"] = r1c3;
+
+                    if (client_RowIndex == "0")
+                        type = "KDNA2200";
+                    else
+                        type = "KDNA1000";
+
+
+                    Update(type, kdnaDT);
                 }
                 //KDCA..
                 foreach (GridViewRow rows in gv_kdca.Rows)
@@ -566,21 +644,21 @@ namespace QA_LAB_project
                     kdcaDT.Columns.Add("-3-", typeof(string));
                     var row = kdcaDT.NewRow();
                     kdcaDT.Rows.Add(row);
-                        System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdca1");
-                        r1c1 = myTextBox1.Text;
-                        System.Web.UI.WebControls.TextBox myTextBox2 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdca2");
-                        r1c2 = myTextBox2.Text;
-                        System.Web.UI.WebControls.TextBox myTextBox3 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdca3");
-                        r1c3 = myTextBox3.Text;
-                        row["-1-"] = r1c1;
-                        row["-2-"] = r1c2;
-                        row["-3-"] = r1c3;
-                        if (client_RowIndex == "0")
-                            type = "KDCA2200";
-                        else
-                            type = "KDCA1000";
-                        Update(type, kdcaDT);
-                    
+                    System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdca1");
+                    r1c1 = myTextBox1.Text;
+                    System.Web.UI.WebControls.TextBox myTextBox2 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdca2");
+                    r1c2 = myTextBox2.Text;
+                    System.Web.UI.WebControls.TextBox myTextBox3 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdca3");
+                    r1c3 = myTextBox3.Text;
+                    row["-1-"] = r1c1;
+                    row["-2-"] = r1c2;
+                    row["-3-"] = r1c3;
+                    if (client_RowIndex == "0")
+                        type = "KDCA2200";
+                    else
+                        type = "KDCA1000";
+                   Update(type, kdcaDT);
+
                 }
                 //KDZN
                 foreach (GridViewRow rows in gv_kdzn.Rows)
@@ -595,53 +673,32 @@ namespace QA_LAB_project
                     string client_ID = rows.ClientID;
                     string client_RowIndex = rows.RowIndex.ToString();
                     string id = Session["kiln_id"].ToString();
-                    
-                        System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdzn1");
-                        r1c1 = myTextBox1.Text;
-                        System.Web.UI.WebControls.TextBox myTextBox2 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdzn2");
-                        r1c2 = myTextBox2.Text;
-                        System.Web.UI.WebControls.TextBox myTextBox3 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdzn3");
-                        r1c3 = myTextBox3.Text;
-                        if (client_RowIndex == "0")
-                            type = "KDZN2200";
-                        else
-                            type = "KDZN1000";
-                        row["-1-"] = r1c1;
-                        row["-2-"] = r1c2;
-                        row["-3-"] = r1c3;
-                        Update(type, kdznDT);
-                    
+
+                    System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdzn1");
+                    r1c1 = myTextBox1.Text;
+                    System.Web.UI.WebControls.TextBox myTextBox2 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdzn2");
+                    r1c2 = myTextBox2.Text;
+                    System.Web.UI.WebControls.TextBox myTextBox3 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_kdzn3");
+                    r1c3 = myTextBox3.Text;
+                    if (client_RowIndex == "0")
+                        type = "KDZN2200";
+                    else
+                        type = "KDZN1000";
+                    row["-1-"] = r1c1;
+                    row["-2-"] = r1c2;
+                    row["-3-"] = r1c3;
+                    Update(type, kdznDT);
+
                 }
 
-                //HYDRATE DRYER
-                DataTable lsodaDT = new DataTable();
-                lsodaDT.Columns.Add("Time", typeof(string));
-                lsodaDT.Columns.Add("lsoda", typeof(string));
-                lsodaDT.Columns.Add("reflect", typeof(string));
-                foreach (GridViewRow rows in gv_hydryer.Rows)
-                {
-                    //GridViewRow row_ = (sender as LinkButton).NamingContainer as GridViewRow;
-                    string client_ID = rows.ClientID;
-                    string client_RowIndex = rows.RowIndex.ToString();
-                    string id = Session["kiln_id"].ToString();
-                   
-                    
-                        System.Web.UI.WebControls.TextBox myTextBox1 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_lsoda");
-                        string lsoda = myTextBox1.Text;
-                        System.Web.UI.WebControls.TextBox myTextBox2 = (System.Web.UI.WebControls.TextBox)rows.FindControl("txtbox_reflect");
-                        string reflect = myTextBox2.Text;
-              
-                        var row = lsodaDT.NewRow();
-                        lsodaDT.Rows.Add(row);
-                        type = "lsoda";
-                        row["lsoda"] = lsoda;
-                        row["reflect"] = reflect;
-                      
-                }
-                Update(type, lsodaDT);
+             
 
-                //Dryer Feed Moisture/Kiln Feed Moisture ...
-                foreach (GridViewRow rows in gv_dryerfm.Rows)
+             
+
+
+
+                    //Dryer Feed Moisture/Kiln Feed Moisture ...
+                    foreach (GridViewRow rows in gv_dryerfm.Rows)
                     {
                         DataTable dryerfmDT = new DataTable();
                         //dryerfmDT.Columns.Add("Time", typeof(string));
@@ -941,19 +998,29 @@ namespace QA_LAB_project
             //string strdate = HttpContext.Current.Session["kiln_date"].ToString();
             //var date_ = DateTime.ParseExact(strdate, "yyyy-MM-dd'T'HH:mm:ss.fff'Z'", CultureInfo.InvariantCulture);
             //date_.ToShortDateString();
-            SqlConnection con = new SqlConnection(strConnString);
-            SqlCommand cmd = new SqlCommand("LAB_sp_kiln_dryer", con);
-            using (con)
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@kiln_id", SqlDbType.VarChar, 20).Value = Session["kiln_id"].ToString();
-                cmd.Parameters.Add("@fieldname", SqlDbType.VarChar, 20).Value = type;
-                cmd.Parameters.Add("@var1", SqlDbType.VarChar, 10).Value = @par1;
-                cmd.Parameters.Add("@var2", SqlDbType.VarChar, 10).Value = @par2;
-                cmd.Parameters.Add("@var3", SqlDbType.VarChar, 10).Value = @par3;
-                cmd.Parameters.Add("@var4", SqlDbType.VarChar, 10).Value = @par4;
-                con.Open();
-                cmd.ExecuteNonQuery();
+
+                SqlConnection con = new SqlConnection(strConnString);
+                SqlCommand cmd = new SqlCommand("LAB_sp_kiln_dryer", con);
+                using (con)
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@kiln_id", SqlDbType.VarChar, (10)).Value = Session["kiln_id"].ToString();
+                    cmd.Parameters.Add("@fieldname", SqlDbType.VarChar,(20)).Value = type;
+                    cmd.Parameters.Add("@var1", SqlDbType.VarChar, (10)).Value = @par1;
+                    cmd.Parameters.Add("@var2", SqlDbType.VarChar, (10)).Value = @par2;
+                    cmd.Parameters.Add("@var3", SqlDbType.VarChar, (10)).Value = @par3;
+                    cmd.Parameters.Add("@var4", SqlDbType.VarChar, (10)).Value = @par4;
+                    con.Open();
+                   cmd.ExecuteNonQuery();
+                }
+
+
+            }
+            catch(Exception s)
+            {
+
             }
         }
         public void Update(string type, DataTable dt)
@@ -975,13 +1042,27 @@ namespace QA_LAB_project
                     for (int i = 0; i < 2; i++)
                     {    
                         @par1 = string.IsNullOrEmpty(dt.Rows[0][fieldname].ToString()) ? "" : dt.Rows[0][fieldname].ToString();
-                        @par2 = string.IsNullOrEmpty(dt.Rows[1][fieldname].ToString()) ? "" : dt.Rows[1][fieldname].ToString();
-                        @par3 = string.IsNullOrEmpty(dt.Rows[2][fieldname].ToString()) ? "" : dt.Rows[2][fieldname].ToString();
-                        @par4 = string.IsNullOrEmpty(dt.Rows[3][fieldname].ToString()) ? "" : dt.Rows[3][fieldname].ToString();
-                        sqlConnection(fieldname, @par1, @par2, @par3, par4);
+                       // @par2 = string.IsNullOrEmpty(dt.Rows[1][fieldname].ToString()) ? "" : dt.Rows[1][fieldname].ToString();
+                        @par3 = string.IsNullOrEmpty(dt.Rows[1][fieldname].ToString()) ? "" : dt.Rows[1][fieldname].ToString();
+                        //@par4 = string.IsNullOrEmpty(dt.Rows[3][fieldname].ToString()) ? "" : dt.Rows[3][fieldname].ToString();
+                        sqlConnection(fieldname, @par1, "", @par3, "");
                     
                         fieldname = "reflect";
                     } 
+                }
+                else if (type == "dryer5")
+                {
+                    string fieldname = "lsoda";;
+                    @par1 = string.IsNullOrEmpty(dt.Rows[0][fieldname].ToString()) ? "" : dt.Rows[0][fieldname].ToString();
+                    // @par2 = string.IsNullOrEmpty(dt.Rows[1][fieldname].ToString()) ? "" : dt.Rows[1][fieldname].ToString();
+                    @par3 = string.IsNullOrEmpty(dt.Rows[1][fieldname].ToString()) ? "" : dt.Rows[1][fieldname].ToString();
+                    //@par4 = string.IsNullOrEmpty(dt.Rows[3][fieldname].ToString()) ? "" : dt.Rows[3][fieldname].ToString();
+
+                 
+                    sqlConnection(type, @par1, "", @par3, "");
+                    PiInsert(type, dt);
+
+
                 }
                 else if ( type == "feedmoisture")
                 {
@@ -1032,8 +1113,38 @@ namespace QA_LAB_project
                 else
                     date = Convert.ToDateTime(Session["kiln_date"].ToString());
 
+
+                //Dryer #5
+                if (type == "dryer5")
+                {
+                    DateTime d_t;
+                    DateTime now = DateTime.Now;
+                    string stime = now.ToString();
+                    TimeSpan ts1 = new TimeSpan(6, 0, 0);
+                    TimeSpan ts2 = new TimeSpan(18, 0, 0);
+                    PIPoint myPIPoint = PIPoint.FindPIPoint(myPIServer, "LAB_DRYER5");
+                    AFValue currentTag = myPIPoint.CurrentValue();
+                    if (!stime.Contains("PM"))
+                    {
+                        d_t = date + ts1;
+                        currentTag.Value = string.IsNullOrEmpty(dt.Rows[0][0].ToString()) ? "" : dt.Rows[0][0].ToString();
+                        currentTag.Timestamp = d_t;
+                        myPIPoint.UpdateValue(currentTag, AFUpdateOption.Insert);
+                    }
+                    else
+                    {
+                        d_t = date + ts2;
+                        currentTag.Value = string.IsNullOrEmpty(dt.Rows[1][0].ToString()) ? "" : dt.Rows[1][0].ToString();
+                        currentTag.Timestamp = d_t;
+                        myPIPoint.UpdateValue(currentTag, AFUpdateOption.Insert);
+                    }
+
+                    
+                  
+                }
+
                 //type is not feed moisture
-                if (type.Contains("K"))
+                else if (type.Contains("K"))
                 {
               
                     string s = type.Substring(0, type.Length - 4);

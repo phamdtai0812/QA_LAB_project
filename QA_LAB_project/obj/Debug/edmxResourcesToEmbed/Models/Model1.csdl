@@ -14,6 +14,9 @@
     <EntitySet Name="LAB_DAILYANALYSIS" EntityType="LabModel.LAB_DAILYANALYSIS" />
     <EntitySet Name="Lab_TagTable" EntityType="LabModel.Lab_TagTable" />
     <EntitySet Name="LAB_HYDRATE_ANALYSIS" EntityType="LabModel.LAB_HYDRATE_ANALYSIS" />
+    <EntitySet Name="LAB_HOUSEKEEPING" EntityType="LabModel.LAB_HOUSEKEEPING" />
+    <EntitySet Name="LAB_TECHNICIAN" EntityType="LabModel.LAB_TECHNICIAN" />
+    <EntitySet Name="LAB_DAILY_OP_Sample_Inventory" EntityType="LabModel.LAB_DAILY_OP_Sample_Inventory" />
   </EntityContainer>
   <EntityType Name="LAB_CAUSTIC_CLEAN">
     <Key>
@@ -160,6 +163,10 @@
     <Property Name="H2OSOUTH1200" Type="Int32" />
     <Property Name="H2OSOUTH1800" Type="Int32" />
     <Property Name="H2O_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="H2ONO5_0600" Type="Int32" />
+    <Property Name="H2ONO5_1200" Type="Int32" />
+    <Property Name="H2ONO5_1800" Type="Int32" />
+    <Property Name="H2ONO5_0000" Type="Int32" />
   </EntityType>
   <EntityType Name="LAB_KILN_DRYER">
     <Key>
@@ -336,7 +343,7 @@
       <PropertyRef Name="MD_ID" />
     </Key>
     <Property Name="MMISCDATE" Type="DateTime" Precision="0" />
-    <Property Name="MMISCDESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MMISCDESCR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="MMISCQTY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MMISCSIZE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
@@ -427,5 +434,110 @@
     <Property Name="LEACHSODA" Type="Decimal" Precision="10" Scale="3" />
     <Property Name="MOISTURE" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="HYDRATE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="LAB_HOUSEKEEPING">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BenchTop" Type="Int16" />
+    <Property Name="Trash" Type="Int16" />
+    <Property Name="MSHAWorkSheet" Type="Int16" />
+    <Property Name="MissingLabSamples" Type="Int16" />
+    <Property Name="SampleDiscarded" Type="Int16" />
+    <Property Name="EquipmentOOS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OOSSamples" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Tech" Type="Int32" />
+    <Property Name="LabSumpPump1" Type="Int32" />
+    <Property Name="LabSumpPump2" Type="Int32" />
+    <Property Name="EmailsRead" Type="Int32" />
+    <Property Name="TimeStamp" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="LAB_TECHNICIAN">
+    <Key>
+      <PropertyRef Name="TechId" />
+    </Key>
+    <Property Name="TechName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TechId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAB_DAILY_OP_Sample_Inventory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Shift" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WOF" Type="Int32" />
+    <Property Name="WOF_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUF" Type="Int32" />
+    <Property Name="SUF_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WUF" Type="Int32" />
+    <Property Name="WUF_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MTL" Type="Int32" />
+    <Property Name="MTL_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SRT" Type="Int32" />
+    <Property Name="SRT_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Washer_Profile" Type="Int32" />
+    <Property Name="WP_comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sulfide_Tank" Type="Int32" />
+    <Property Name="Sulfide_Tank_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lime_Recovery" Type="Int32" />
+    <Property Name="Lime_Recovery_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Filter_Aid" Type="Int32" />
+    <Property Name="Filter_Aid_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dilution_Floc" Type="Int32" />
+    <Property Name="Dilution_Floc_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TT_Tops" Type="Int32" />
+    <Property Name="TT_Tops_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST_Tops" Type="Int32" />
+    <Property Name="ST_Tops_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ST_38" Type="Int32" />
+    <Property Name="ST_38_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TT_52" Type="Int32" />
+    <Property Name="TT_52_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="A6_UF" Type="Int32" />
+    <Property Name="A6_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="B6_UF" Type="Int32" />
+    <Property Name="B6_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="A7_UF" Type="Int32" />
+    <Property Name="A7_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="B7_UF" Type="Int32" />
+    <Property Name="B7_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="A7_OF" Type="Int32" />
+    <Property Name="A7_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="B7_OF" Type="Int32" />
+    <Property Name="B7_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Y15_UF" Type="Int32" />
+    <Property Name="Y15_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Y16_UF" Type="Int32" />
+    <Property Name="Y16_UF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Y15_OF" Type="Int32" />
+    <Property Name="Y15_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Y16_OF" Type="Int32" />
+    <Property Name="Y16_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="C_1b_Cake" Type="Int32" />
+    <Property Name="C_1b_Cake_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="C_2b_Cake" Type="Int32" />
+    <Property Name="C_2b_Cake_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="B_Filtrate_Cyc" Type="Int32" />
+    <Property Name="B_Filtrate_Cyc_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tray_OF" Type="Int32" />
+    <Property Name="Tray_OF_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kiln_Feed" Type="Int32" />
+    <Property Name="Kiln_Feed_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dryer_Feed" Type="Int32" />
+    <Property Name="Dryer_Feed_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kiln_Discharge" Type="Int32" />
+    <Property Name="Kiln_Discharge_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dryer_Discharge" Type="Int32" />
+    <Property Name="Dryer_Discharge_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="North_Fresh" Type="Int32" />
+    <Property Name="North_Fresh_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="South_Fresh" Type="Int32" />
+    <Property Name="South_Fresh_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="No5" Type="Int32" />
+    <Property Name="No5_Cmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

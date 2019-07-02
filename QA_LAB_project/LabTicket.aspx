@@ -33,7 +33,7 @@ background: #DCDCDC; /* will apply color */
 
     </style>
     <br />
-    <br />
+  
     <div class="panel panel-default" style="width: 800px; margin: auto" id="panel1" runat="server">
         <div class="panel-heading">
             <div>
@@ -103,6 +103,7 @@ background: #DCDCDC; /* will apply color */
                                 AutoGenerateColumns="False"
                                 EditRowStyle-Width="20px"
                                 Style="border-radius: 10px"
+                                OnRowDataBound ="gv_mhdliquor_OnRowDataBound"
                                 Font-Size="Small">
                                 <Columns>
                                     <asp:TemplateField HeaderText="" ItemStyle-Width="50">
@@ -112,7 +113,7 @@ background: #DCDCDC; /* will apply color */
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="" ItemStyle-Width="50">
                                         <ItemTemplate>
-                                            <asp:TextBox onchange="onChange(this.id);" ID="gv_labticket2_" runat="server" Text='<%# Eval("a", "{0:0.###}") %>' Width="60px" ReadOnly="true"></asp:TextBox>
+                                            <asp:TextBox onchange="onChange(this.id);" ID="gv_labticket2_" runat="server" Text='<%# Eval("a", "{0:.###}") %>' Width="60px" ReadOnly="true"></asp:TextBox>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>

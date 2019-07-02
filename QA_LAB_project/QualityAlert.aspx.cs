@@ -69,6 +69,8 @@ namespace QA_LAB_project
                 title = "Check List for Low Evaporation Feed Caustic";
             else if (value == "11" || value == "7")
                 title = "Check List for High #8 Washer U'flow and MTL Soda";
+            else if (value == "90")
+                title = "Filter Aid Solids";
             else
                 title = "";
 
@@ -99,17 +101,23 @@ namespace QA_LAB_project
 
                 if (title != "")
                 {
-                    mail.Attachments.Add(new System.Net.Mail.Attachment(@"C:\QualityAlert\" + title + ".xlsx"));
-                    //mail.Attachments.Add(new System.Net.Mail.Attachment(@"\\ga-fs1\shared\Everyone\Lab\QualityAlert\" + title + ".xlsx"));
-                    //mail.Attachments.Add(new System.Net.Mail.Attachment(attachmentPath));
+                    if (title == "Filter Aid Solids")
+                        mail.Subject = "Quality Alert -- Filter Aid Solids";
+                    else
+                    {
+                        mail.Attachments.Add(new System.Net.Mail.Attachment(@"C:\QualityAlert\" + title + ".xlsx"));
+                        //mail.Attachments.Add(new System.Net.Mail.Attachment(@"\\ga-fs1\shared\Everyone\Lab\QualityAlert\" + title + ".xlsx"));
+                        //mail.Attachments.Add(new System.Net.Mail.Attachment(attachmentPath));
 
-                    mail.Subject = "Quality Alert -- " + title.Substring(15, (title.Length - 15));
-                    //ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('Email/Attachment Sent')", true);
+                        mail.Subject = "Quality Alert -- " + title.Substring(15, (title.Length - 15));
+                        //ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('Email/Attachment Sent')", true);
+                    }
                 }
-
+             
                 else
                 {
-                    mail.Subject = "Quality Alert -- " + ddlQualAlert.SelectedItem;
+                    //mail.Subject = "Quality Alert -- " + ddlQualAlert.SelectedItem;
+                    mail.Subject = "Quality Alert";
                 }
 
                 //ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('Email/Attachment Sent')", true);
@@ -119,7 +127,7 @@ namespace QA_LAB_project
 
                 smtpClient.Send(mail);
 
-                ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('Email/Attachment Sent')", true);
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", "alert('Email/Attachment Sent')", true);
                 ddlQualAlert.SelectedIndex = 0;
                 TextArea1.InnerText = "";
                 TextArea2.InnerText = "";

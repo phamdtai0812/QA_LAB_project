@@ -22,6 +22,7 @@ using QA_LAB_project.Models;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net.Mail;
+using System.IO;
 
 namespace QA_LAB_project
 {
@@ -374,29 +375,91 @@ namespace QA_LAB_project
         }
         protected void ResendDataToPi(object sender, EventArgs e)
         {
+            //string error1 = "Time cannot be in the future.  Please resend after 12:00 AM.";
+            //string error2 = "";
             try
             {
-                using (SqlConnection con = new SqlConnection(strConnString))
+                
+
+                if (Session["ccround"].ToString() == "2400" && DateTime.Now.Hour > 3 && Convert.ToDateTime(Session["ccontrol_date"].ToString()) ==  DateTime.Today )
                 {
-                    String strConnString = ConfigurationManager.ConnectionStrings["QA_Lab_ConnectionString"].ConnectionString;
-                    SqlCommand cmd = new SqlCommand("LAB_sp_chargecontrol_toPi", con);
-                    SqlDataAdapter sda = new SqlDataAdapter();
-                    cmd.Connection = con;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    con.Open();
-                    cmd.ExecuteNonQuery();
+
+                    ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", "alert('Error. Time cannot be in the future.  Please resend after 12:00 AM.')", true);
                 }
 
-                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                startInfo.FileName = @"C:\TaiPham\ChargeControl_ConsoleApp\ConsoleAppOracle.exe";
-                startInfo.Verb = "runas";
-                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                else
+                {
+                    using (SqlConnection con = new SqlConnection(strConnString))
+                    {
+                        String strConnString = ConfigurationManager.ConnectionStrings["QA_Lab_ConnectionString"].ConnectionString;
+                        SqlCommand cmd = new SqlCommand("LAB_sp_Send_chargecontrol_toPi", con);
+                        SqlDataAdapter sda = new SqlDataAdapter();
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CCROUND", SqlDbType.VarChar).Value = Session["ccround"].ToString();
+                        cmd.Parameters.AddWithValue("@DATE", SqlDbType.VarChar).Value = Session["ccontrol_date"].ToString();
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+
+
+                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                    startInfo.FileName = @"C:\TaiPham\ChargeControl_ConsoleApp\ConsoleAppOracle.exe";
+                    startInfo.Verb = "runas";
+                    startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    Process.Start(startInfo);
+
+                    System.Threading.Thread.Sleep(3000);
+                    ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", "alert('Data has been sent to Pi')", true);
+                    System.Threading.Thread.Sleep(3000);
+                    //PopulateLabTicketData();
+
+                    System.Diagnostics.ProcessStartInfo startInfo2 = new System.Diagnostics.ProcessStartInfo();
+                    startInfo2.FileName = @"C:\TaiPham\PiErrorCheckingChargeControl\PiInsert.exe";
+                    startInfo2.Verb = "runas";
+                    startInfo2.WindowStyle = ProcessWindowStyle.Hidden;
+                    Process.Start(startInfo);
+
+                }
+
+
+
             }
             catch
             {
 
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", "alert('Data sending to Pi failed! Please resend later')", true);
+
+                System.Net.Mail.SmtpClient smtpClient = new System.Net.Mail.SmtpClient("smtp-mail.outlook.com", 25);
+                smtpClient.UseDefaultCredentials = true;
+                smtpClient.Credentials = new System.Net.NetworkCredential("QALab@norandaalumina.com", "Dave76664");
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.EnableSsl = true;
+                System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+                mail.From = new System.Net.Mail.MailAddress("QALab@norandaalumina.com", "Dave76664");
+
+                mail.To.Add(new System.Net.Mail.MailAddress("alsie.dunbar@norandaalumina.com"));
+                mail.To.Add(new System.Net.Mail.MailAddress("QAlab@norandaalumina.com"));
+                mail.CC.Add(new System.Net.Mail.MailAddress("tai.pham@norandaalumina.com"));
+
+                mail.Subject = "Data sending to Pi failed";
+                mail.Body = "Pi data cannot be in the future. Please wait couple minutes after the round to resend ";
+
+                smtpClient.Send(mail);
+
+                mail.Dispose();
+
+
             }
 
+        }
+        protected void PopulateLabTicketData()
+        {
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.FileName = @"C:\TaiPham\LabTicketConsole\Settler_UFSolids.exe";
+            startInfo.Verb = "runas";
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            Process.Start(startInfo);
         }
             protected void SaveButtonClick(object sender, EventArgs e)
         {
@@ -1060,8 +1123,16 @@ namespace QA_LAB_project
                 this.Response.Redirect(this.Request.Url.ToString());
 
             }
-            catch (Exception ex)
+            catch (Exception exs)
             {
+                string filePath = @"C:\Error.txt";
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine("Message :" + exs.Message + "<br/>" + Environment.NewLine + "StackTrace :" + exs.StackTrace +
+                       "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
+                    writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
+                }
             }
         }
         public void Update(DataTable dt)
@@ -1163,6 +1234,8 @@ namespace QA_LAB_project
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }
+
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", "alert('Data has been saved')", true);
                 List<decimal?> piTagValue = new List<decimal?>();
                     //list for Pi update
                     piTagValue.Add(string.IsNullOrEmpty(dt.Rows[0]["TESTTANKCAUSTIC"].ToString()) ? (decimal?)null : Convert.ToDecimal(dt.Rows[0]["TESTTANKCAUSTIC"].ToString()));
@@ -1192,46 +1265,61 @@ namespace QA_LAB_project
                 //if ((date < today) || (date == today && time <= DateTime.Now.Hour))
 
 
-                int numberOfNull = 0; ;
-                for (int i = 0; i < piTagValue.Count; i++)
-                {
-                    if (piTagValue[i] == null)
-                    {
-                        numberOfNull = numberOfNull + 1;
-                    }
-                }
+                //int numberOfNull = 0; ;
+                //for (int i = 0; i < piTagValue.Count; i++)
+                //{
+                //    if (piTagValue[i] == null)
+                //    {
+                //        numberOfNull = numberOfNull + 1;
+                //    }
+                //}
 
 
-                if ( (date == today && time <= DateTime.Now.Hour) )
-                {
+              //if ( (date == today && time <= DateTime.Now.Hour) )
+              //  {
                    
-                    if (numberOfNull < 8)
-                    {
-                        PiInsert(piTagValue, datetime);
-                    }
-                }
+              //      if (numberOfNull < 8)
+              //      {
+              //          PiInsert(piTagValue, datetime);
+              //      }
+              //  }
 
-                else
-                {
-                    if (numberOfNull < 8)
-                    {
-                       
-                        String strConnString = ConfigurationManager.ConnectionStrings["QA_Lab_ConnectionString"].ConnectionString;
-                        SqlConnection con = new SqlConnection(strConnString);
-                        for (int i = 0; i <= piTagValue.Count; i++)
-                        {
-                            SqlCommand cmd = new SqlCommand("insert into LAB_TEMPTABLE (CCDATE, VALUE_, CCROUND, INDEX_) values " +
-                                " ('" + date + "','" + piTagValue[i] + "','" + Session["ccround"].ToString().Substring(0, 2) + "','" + (i + 1) + "')", con);
-                            con.Open();
-                            cmd.ExecuteNonQuery();
-                            con.Close();
-                        }
+              //  else
+              //  {
+              //      if (numberOfNull < 8)
+              //      {
 
-                    }
-                }
+              //          String strConnString = ConfigurationManager.ConnectionStrings["QA_Lab_ConnectionString"].ConnectionString;
+              //          SqlConnection con = new SqlConnection(strConnString);
+              //          SqlCommand cmd = new SqlCommand("truncate  LAB_TEMPTABLE", con);
+              //          con.Open();
+              //          cmd.ExecuteNonQuery();
+              //          con.Close();
+              //          for (int i = 0; i <= piTagValue.Count; i++)
+              //          {
+                            
+
+              //              SqlCommand cmd2 = new SqlCommand("insert into LAB_TEMPTABLE (CCDATE, VALUE_, CCROUND, INDEX_) values " +
+              //                  " ('" + date + "','" + piTagValue[i] + "','" + Session["ccround"].ToString().Substring(0, 2) + "','" + (i + 1) + "')", con);
+              //              con.Open();
+              //              cmd2.ExecuteNonQuery();
+              //              con.Close();
+              //          }
+
+              //      }
+                    
+              //  }
             }
-            catch (Exception e)
+            catch (Exception exs)
             {
+                string filePath = @"C:\Error.txt";
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine("Message :" + exs.Message + "<br/>" + Environment.NewLine + "StackTrace :" + exs.StackTrace +
+                       "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
+                    writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
+                }
 
             }
         }
@@ -1297,9 +1385,23 @@ namespace QA_LAB_project
                     //}
                 }
                 myPIServer.Disconnect();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Data has been sent to Pi')", true);
+                //ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", @"alert('Data has been sent to Pi');", true);
+               
             }
-            catch (Exception ex)
+            catch (Exception exs)
             {
+
+                string filePath = @"C:\Error.txt";
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine("Message :" + exs.Message + "<br/>" + Environment.NewLine + "StackTrace :" + exs.StackTrace +
+                       "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
+                    writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
+                }
+
+
                 //Send email to QALab to alert of data failed to send to Pi
                 System.Net.Mail.SmtpClient smtpClient = new System.Net.Mail.SmtpClient("smtp-mail.outlook.com", 25);
                 smtpClient.UseDefaultCredentials = true;
@@ -1316,6 +1418,8 @@ namespace QA_LAB_project
                 mail.Body = "Resend the latest round  charge control to Pi.";
 
                 smtpClient.Send(mail);
+
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "alertMessage", "alert('Data sending to Pi failed! Please resend')", true);
 
             }
             //*************************End*******************************

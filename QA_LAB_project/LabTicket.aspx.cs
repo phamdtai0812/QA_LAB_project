@@ -1157,17 +1157,6 @@ namespace QA_LAB_project
         protected void SendPDF_Click(object sender, EventArgs e)
         {
 
-            //string strFileName = HttpContext.Current.Server.MapPath("test.pdf");
-            //// step 1: creation of a document-object
-            //Document document = new Document();
-            //// step 2:
-            //// we create a writer that listens to the document
-            //PdfWriter.GetInstance(document, new FileStream(strFileName, FileMode.Create));
-            //StringReader se = new StringReader(strHtml);
-            //XMLWorker obj = new XMLWorker(document);
-            //document.Open();
-            //obj.Parse(se);
-            //document.Close();
           
             try
             {
@@ -1624,6 +1613,28 @@ namespace QA_LAB_project
             }
 
             //}
+        }
+        protected void gv_mhdliquor_OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
+        {
+            string ccround;
+
+            foreach (GridViewRow rw in gv_labticket2.Rows)
+            {
+                Label txt = (Label)rw.FindControl("gv_labticket_s");
+                if (txt.Text == "MHD. Aim")
+                {
+                    TextBox tbox2 = (TextBox)rw.FindControl("gv_labticket2_");
+                    tbox2.Text = float.Parse(tbox2.Text).ToString("0.000");
+                }
+                if (txt.Text == "THD Aim")
+                {
+                    TextBox tbox2 = (TextBox)rw.FindControl("gv_labticket2_");
+                    tbox2.Text = float.Parse(tbox2.Text).ToString("0.000");
+                }
+
+            }
+
+            
         }
         protected void gv_soda_OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
         {

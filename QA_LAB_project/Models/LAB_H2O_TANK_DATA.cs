@@ -24,5 +24,9 @@ namespace QA_LAB_project.Models
         public Nullable<int> H2OSOUTH1200 { get; set; }
         public Nullable<int> H2OSOUTH1800 { get; set; }
         public int H2O_ID { get; set; }
+        public Nullable<int> H2ONO5_0600 { get; set; }
+        public Nullable<int> H2ONO5_1200 { get; set; }
+        public Nullable<int> H2ONO5_1800 { get; set; }
+        public Nullable<int> H2ONO5_0000 { get; set; }
     }
 }

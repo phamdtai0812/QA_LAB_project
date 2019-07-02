@@ -36,7 +36,7 @@ background: #DCDCDC; /* will apply color */
      
     </style>
     <br />
-    <br />
+   
     <div class="panel panel-default" style="width: 800px; margin:auto">
         <div class="panel-heading">
            <p style="color:white"> SEC I/II Data</p>
@@ -60,7 +60,7 @@ background: #DCDCDC; /* will apply color */
             <div class="panel panel-default" style="width: 98%; padding: 10px;" id="panel1">
                 <div id="Tabs" role="tabpanel">
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
+                    <ul class="nav nav-tabs" role="tablist"  style="background-color: gray">
                         <li class="active" ><a href="#solidanalysis" aria-controls="solidanalysis" role="tab" data-toggle="tab">% Solid Analysis</a></li>
                         <li><a href="#washerprofile" aria-controls="washerprolife" role="tab" data-toggle="tab" onclick="addInputs();">Washer Profile & PDS</a></li>
                         <li><a href="#mglsolids" aria-controls="washerprolife" role="tab" data-toggle="tab" onclick="addInputs();">SOF/WOF Solids</a></li>
